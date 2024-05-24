@@ -1,6 +1,7 @@
 import StatCardStyle from "../components/styling/StatCardStyle";
 import StatsFilmsWatched from "./StatsFilmsWatched";
 import FilmSearch from "./FilmSearch";
+import Navbar from "./Navbar";
 
 export default function Homepage() {
 	return (
@@ -9,6 +10,7 @@ export default function Homepage() {
 			<StatCardStyle>
 				<StatsFilmsWatched />
 			</StatCardStyle>
+			<Navbar />
 		</div>
 	);
 }
