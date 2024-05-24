@@ -1,3 +1,4 @@
+
 body{
     margin: 0;
 }
@@ -9,6 +10,7 @@ body{
         z-index: 9999;    
 }
 
+//user log in or sign up
 .log-in-form,
 .sign-up-form{
     text-align: center;
@@ -21,3 +23,9 @@ body{
 .extra-options{
     margin: 10px;
 }
+
+//stasts
+.statCardStyle {
+  padding: 30px;
+}
+
