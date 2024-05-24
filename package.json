@@ -12,7 +12,6 @@
     "check:up-to-date-types": "tcm --listDifferent ."
   },
   "dependencies": {
-
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@mui/icons-material": "^5.15.18",
@@ -21,12 +20,10 @@
     "react-dom": "^18.2.0",
     "react-icons": "^5.2.1",
     "react-router-dom": "^6.23.1",
-    "typed-css-modules": "^0.9.1"
+    "typed-css-modules": "^0.9.1",
     "axios": "^1.7.2",
     "chart.js": "^4.4.3",
-    "react-chartjs-2": "^5.2.0",
-    "react-dom": "^18.2.0"
-
+    "react-chartjs-2": "^5.2.0"
   },
   "devDependencies": {
     "@jest/globals": "^29.7.0",

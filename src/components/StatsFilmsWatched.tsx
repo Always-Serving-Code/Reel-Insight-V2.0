@@ -9,7 +9,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import "../src/App.css";
+import "../App.css";
 
 export default function StatsFilmsWatched() {
   ChartJS.register(
