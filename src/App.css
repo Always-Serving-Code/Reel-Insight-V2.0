@@ -1,3 +1,31 @@
+
+body{
+    margin: 0;
+}
+.header{
+        background-color: #dfdede;
+        padding: 10px;
+        position: sticky;
+        top: 0;
+        z-index: 9999;    
+}
+
+//user log in or sign up
+.log-in-form,
+.sign-up-form{
+    text-align: center;
+    padding: 100px;
+}
+
+.user-info-label{
+    margin: 10px;
+}
+.extra-options{
+    margin: 10px;
+}
+
+//stasts
 .statCardStyle {
   padding: 30px;
 }
+
