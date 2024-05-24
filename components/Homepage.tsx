@@ -1,5 +1,12 @@
-import React from "react";
+import StatCardStyle from "../components/styling/StatCardStyle";
+import StatsFilmsWatched from "./StatsFilmsWatched";
 
 export default function Homepage() {
-  return <div></div>;
+  return (
+    <div>
+      <StatCardStyle>
+        <StatsFilmsWatched />
+      </StatCardStyle>
+    </div>
+  );
 }
