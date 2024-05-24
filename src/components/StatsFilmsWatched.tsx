@@ -12,7 +12,9 @@ import {
   Legend,
 } from "chart.js";
 import "../App.css";
+
 import { useEffect, useState } from "react";
+
 
 export default function StatsFilmsWatched() {
   const [filmsWatched, setFilmsWatched] = useState([]);

@@ -7,6 +7,7 @@ const client = axios.create({
 export const getFilms = async () => {
   const { data } = await client.get("films");
   return data["films"];
+
 };
 
 export const getUserById = (user_id: number) => {
@@ -15,4 +16,5 @@ export const getUserById = (user_id: number) => {
     .then((user) => {
       return { user };
     });
+
 };
