@@ -4,6 +4,7 @@ import { VscGraphLine } from "react-icons/vsc";
 import { FaRegUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import styles from "../css modules/Navbar.module.css";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (

@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router";
 import "./App.css";
 import Header from "./components/Header";
+import Navbar from "./components/Navbar";
 import AuthForm from "./components/AuthForm";
 import Homepage from "./components/Homepage";
 import FilmHistoryPage from "./components/FilmHistoryPage";

@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.info {
+  margin: 20px;
+}
+
+.avatar {
+  max-width: 70px;
+  text-align: left;
+  padding: 10px;
+  margin-left: 10px;
+}
