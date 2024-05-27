@@ -4,11 +4,15 @@ const client = axios.create({
   baseURL: "https://be-film-stat-app.onrender.com/api/",
 });
 
-export const getFilms = async () => {
-  const { data } = await client.get("films");
-  return data["films"];
+interface Response {
+	data: any | object;
+}
 
-};
+export const getFilms = () => {
+	return client.get("films").then((response: Response) => {
+		return response["data"]["films"];
+	});
+}
 
 export const getUserById = (user_id: number) => {
   return axios
@@ -16,5 +20,4 @@ export const getUserById = (user_id: number) => {
     .then((user) => {
       return { user };
     });
-
 };

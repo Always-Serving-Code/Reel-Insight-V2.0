@@ -2,35 +2,36 @@ import { getUserById } from "../utils/apiUtils";
 import { Line } from "react-chartjs-2";
 import moment from "moment";
 import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend,
+	Chart as ChartJS,
+	CategoryScale,
+	LinearScale,
+	PointElement,
+	LineElement,
+	Title,
+	Tooltip,
+	Legend,
 } from "chart.js";
 import "../App.css";
 
 import { useEffect, useState } from "react";
 
-
 export default function StatsFilmsWatched() {
   const [filmsWatched, setFilmsWatched] = useState([]);
-  const [dataRequest, setDataRequest] = useState(false);
+
   useEffect(() => {
     getUserById(5).then((user) => {
       setFilmsWatched(user.user.data.user.films);
-      setDataRequest(true);
     });
   }, []);
 
-  console.log(filmsWatched);
-  const date = filmsWatched[0]["date_watched"];
-  const month = moment(date, "YYYY-MM-DDTHH:mm:ss.SSS[Z]").format("MMMM");
-
-  //loop through the user films, convert with moment and save to new array, add that to line graph
+  const monthArr: Array<string> = [];
+  if (filmsWatched.length) {
+    filmsWatched.forEach((film) => {
+      const date = film["date_watched"];
+      const month = moment(date, "YYYY-MM-DDTHH:mm:ss.SSS[Z]").format("MMMM");
+      monthArr.push(month);
+    });
+  }
 
   ChartJS.register(
     CategoryScale,
@@ -64,31 +65,42 @@ export default function StatsFilmsWatched() {
     "May",
     "June",
     "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
   ];
+
+  const filmData: Array<number> = [];
+
+  labels.forEach((month) => {
+    let count = 0;
+    monthArr.forEach((watchMonth: String) => {
+      if (month === watchMonth) {
+        count++;
+      }
+    });
+    filmData.push(count);
+  });
 
   const data = {
     labels,
     datasets: [
       {
         label: "Films Watched",
-        data: [filmsWatched.length],
+        data: filmData,
         borderColor: "rgb(255, 99, 132)",
         backgroundColor: "rgba(255, 99, 132, 0.5)",
-      },
-      {
-        label: "Hours Watched",
-        data: [filmsWatched.length],
-        borderColor: "rgb(53, 162, 235)",
-        backgroundColor: "rgba(53, 162, 235, 0.5)",
       },
     ],
   };
 
-  return dataRequest ? (
+  return filmsWatched.length ? (
     <div className="chart-container">
       <Line options={options} data={data} />
     </div>
   ) : (
-    <h2>ooops</h2>
+    <h2>loading</h2>
   );
 }
