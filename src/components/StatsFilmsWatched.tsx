@@ -2,14 +2,14 @@ import { getUserById } from "../utils/apiUtils";
 import { Line } from "react-chartjs-2";
 import moment from "moment";
 import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend,
+	Chart as ChartJS,
+	CategoryScale,
+	LinearScale,
+	PointElement,
+	LineElement,
+	Title,
+	Tooltip,
+	Legend,
 } from "chart.js";
 import "../App.css";
 
