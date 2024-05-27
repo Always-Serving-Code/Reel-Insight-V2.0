@@ -1,27 +1,9 @@
 import { useState, useEffect } from "react";
 import StatsMinsWatched from "./StatsMinsWatched";
 import { getUserById } from "../utils/apiUtils";
-
-interface Film {
-  _id?: number | string;
-  title: string;
-  directors: string[];
-  genres: string[];
-  release_year: number;
-  poster_url: string;
-  synopsis: string;
-  lead_actors: string[];
-  runtime: number;
-  __v?: number;
-}
-
-interface User {
-  _id: number;
-  username: string;
-  password: string;
-  email: string;
-  films: Film[];
-}
+import { User } from "../interfaces";
+import StatCardStyle from "./styling/StatCardStyle";
+import StatsFilmsWatched from "./StatsFilmsWatched";
 
 export default function StatsPage() {
   const [userData, setUserData] = useState<User | null>(null);
@@ -45,5 +27,10 @@ export default function StatsPage() {
     return <p>Something went wrong fetching user</p>;
   }
 
-  return <div>{<StatsMinsWatched films={userData.films} />}</div>;
+  return (
+    <StatCardStyle>
+      {<StatsMinsWatched films={userData.films} />}
+      {<StatsFilmsWatched />}
+    </StatCardStyle>
+  );
 }
