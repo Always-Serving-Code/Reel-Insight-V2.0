@@ -1,3 +1,68 @@
+body {
+  margin: 0;
+}
+.header {
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  font-size: 20px;
+  border-bottom: 1px solid black;
+}
+
+/* Authorization Form  */
+.option {
+    font-size: 30px;
+}
+
+.log-in-form,
+.sign-up-form {
+  margin-top: 50%;
+  text-align: center;
+}
+
+.user-info-label {
+  margin: 20px;
+}
+.user-info-label input {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  font-size: 16px;
+  padding: 12px;
+  width: 90%;
+}
+.user-info-label input::placeholder {
+    color: #c2c2c2;
+}
+
+
+.button-submit-auth {
+  border-radius: 10px;
+  font-size: 18px;
+  padding: 12px;
+  background-color: #ffffff;
+}
+
+.button-auth-form {
+  border: 0;
+  background-color: #ffffff;
+  font-size: 16px;
+  padding: 8px;
+  margin-top: 10px;
+}
+
+.extra-options {
+  margin: 20px;
+}
+.extra-options button {
+  border-radius: 10px;
+  font-size: 16px;
+  padding: 12px;
+  background-color: #ffffff;
+}
+
+/* stats */
 .statCardStyle {
   padding: 30px;
 }

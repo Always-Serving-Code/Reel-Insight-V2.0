@@ -1,4 +1,6 @@
+import { getUserById } from "../utils/apiUtils";
 import { Line } from "react-chartjs-2";
+import moment from "moment";
 import {
 	Chart as ChartJS,
 	CategoryScale,
@@ -9,64 +11,96 @@ import {
 	Tooltip,
 	Legend,
 } from "chart.js";
-import "../../src/App.css";
+import "../App.css";
+
+import { useEffect, useState } from "react";
 
 export default function StatsFilmsWatched() {
-	ChartJS.register(
-		CategoryScale,
-		LinearScale,
-		PointElement,
-		LineElement,
-		Title,
-		Tooltip,
-		Legend
-	);
-	const options = {
-		responsive: true,
-		plugins: {
-			legend: {
-				position: "top" as const,
-			},
-			title: {
-				display: true,
-				text: "Films Watched",
-			},
-		},
-		maintainAspectRatio: true,
-		aspectRatio: 1,
-	};
+  const [filmsWatched, setFilmsWatched] = useState([]);
 
-	const labels = [
-		"January",
-		"February",
-		"March",
-		"April",
-		"May",
-		"June",
-		"July",
-	];
+  useEffect(() => {
+    getUserById(5).then((user) => {
+      setFilmsWatched(user.user.data.user.films);
+    });
+  }, []);
 
-	const data = {
-		labels,
-		datasets: [
-			{
-				label: "Films Watched",
-				data: [1, 2, 3],
-				borderColor: "rgb(255, 99, 132)",
-				backgroundColor: "rgba(255, 99, 132, 0.5)",
-			},
-			{
-				label: "Hours Watched",
-				data: [6, 7, 8],
-				borderColor: "rgb(53, 162, 235)",
-				backgroundColor: "rgba(53, 162, 235, 0.5)",
-			},
-		],
-	};
+  const monthArr: Array<string> = [];
+  if (filmsWatched.length) {
+    filmsWatched.forEach((film) => {
+      const date = film["date_watched"];
+      const month = moment(date, "YYYY-MM-DDTHH:mm:ss.SSS[Z]").format("MMMM");
+      monthArr.push(month);
+    });
+  }
 
-	return (
-		<div className="chart-container">
-			<Line options={options} data={data} />
-		</div>
-	);
+  ChartJS.register(
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Title,
+    Tooltip,
+    Legend
+  );
+  const options = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: "top" as const,
+      },
+      title: {
+        display: true,
+        text: "Films Watched",
+      },
+    },
+    maintainAspectRatio: true,
+    aspectRatio: 1,
+  };
+
+  const labels = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  const filmData: Array<number> = [];
+
+  labels.forEach((month) => {
+    let count = 0;
+    monthArr.forEach((watchMonth: String) => {
+      if (month === watchMonth) {
+        count++;
+      }
+    });
+    filmData.push(count);
+  });
+
+  const data = {
+    labels,
+    datasets: [
+      {
+        label: "Films Watched",
+        data: filmData,
+        borderColor: "rgb(255, 99, 132)",
+        backgroundColor: "rgba(255, 99, 132, 0.5)",
+      },
+    ],
+  };
+
+  return filmsWatched.length ? (
+    <div className="chart-container">
+      <Line options={options} data={data} />
+    </div>
+  ) : (
+    <h2>loading</h2>
+  );
 }
