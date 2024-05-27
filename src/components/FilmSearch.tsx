@@ -25,10 +25,10 @@ export default function FilmSearch() {
 	console.log(filteredFilms);
 
 	return (
-		<form>
+		<form className="film-search">
 			<label htmlFor="film-search"></label>
 			<input
-				id="film-search"
+				className="film-search-bar"
 				value={currentSearch}
 				placeholder="Search for a film here!"
 				onChange={(e) => onInputChange(e)}
@@ -36,18 +36,16 @@ export default function FilmSearch() {
 				onBlur={() => setShowSuggestedFilms(false)}
 			></input>
 			{showSuggestedFilms ? (
-				<div>
-					<ul>
+					<ul className="film-search-results">
 						{filteredFilms.map((film: Film) => (
 							<li className="film-search-card">
 								<img className="film-search-img" src={film.poster_url} />
-								<h3>
+								<p>
 									{film.title}, {film.release_year}
-								</h3>
+								</p>
 							</li>
 						))}
 					</ul>
-				</div>
 			) : null}
 		</form>
 	);
