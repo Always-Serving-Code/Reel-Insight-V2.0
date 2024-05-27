@@ -1,5 +1,5 @@
 import StatCardStyle from "../components/styling/StatCardStyle";
-import StatsFilmsWatched from "./StatsFilmsWatched";
+//import StatsFilmsWatched from "./StatsFilmsWatched";
 import FilmSearch from "./FilmSearch";
 import Navbar from "./Navbar";
 
@@ -8,7 +8,7 @@ export default function Homepage() {
 		<div>
 			<FilmSearch />
 			<StatCardStyle>
-				<StatsFilmsWatched />
+				{/* <StatsFilmsWatched /> */}
 			</StatCardStyle>
 			<Navbar />
 		</div>
