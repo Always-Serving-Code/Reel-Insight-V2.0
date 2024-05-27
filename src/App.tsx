@@ -16,6 +16,7 @@ function App() {
         <Route path="/home" element={<Homepage />} />
         <Route path="/history" element={<FilmHistoryPage />} />
         <Route path="/user" element={<UserAccountPage />} />
+        <Navbar />
       </Routes>
     </main>
   );
