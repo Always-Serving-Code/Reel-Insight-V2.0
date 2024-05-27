@@ -2,7 +2,7 @@ import axios from "axios";
 import styles from "../css modules/UserAccountPage.module.css";
 import { useEffect, useState } from "react";
 import avatar from "../assets/images/people.png";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function UserAccountPage() {
   const [userData, setUserData] = useState("");
