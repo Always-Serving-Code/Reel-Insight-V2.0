@@ -1,8 +1,9 @@
-import {  useState } from "react";
+import { useState, useContext } from "react";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import { deleteFilmByIdByUserId } from "../utils/apiUtils";
 import { DeleteProps } from "../interfaces";
 import { Film } from "../interfaces";
+import { FilmsContext } from "../contexts/Films";
 
 export default function DeleteFilm({
   film_id,
@@ -10,6 +11,7 @@ export default function DeleteFilm({
   setFilmsByUserId,
 }: DeleteProps) {
   const [showConfirmation, setShowConfirmation] = useState(false);
+  const { updateFilms, setUpdateFilms } = useContext(FilmsContext);
 
   function handleDeleteClick() {
     setShowConfirmation(true);
@@ -23,6 +25,7 @@ export default function DeleteFilm({
           return film["_id"] !== film_id;
         });
         localStorage.setItem("filmsByUserId", JSON.stringify(updatedFilms));
+        setUpdateFilms(!updateFilms);
         return updatedFilms;
       });
     });
