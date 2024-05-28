@@ -13,6 +13,9 @@ export default function Navbar() {
       <Link to="/history" className="link">
         <PiFilmReelFill />
       </Link>
+      <Link to="/users/5/history">
+        <PiFilmReelFill className={styles.film} />
+      </Link>
       <Link to="/stats" className="link">
         <VscGraphLine />
       </Link>
