@@ -7,6 +7,7 @@ import StatsFilmsWatched from "./StatsFilmsWatched";
 import StatsTopActors from "./StatsTopActors";
 import StatsTopDirectors from "./StatsTopDirectors";
 import StatsDecadePie from "./StatsDecadePie";
+import StatsGenrePie from "./StatsGenrePie";
 
 export default function StatsPage() {
   const [userData, setUserData] = useState<User | null>(null);
@@ -37,6 +38,7 @@ export default function StatsPage() {
       <StatsTopActors filmsWatched={userData.films} />
       <StatsTopDirectors filmsWatched={userData.films} />
       <StatsDecadePie filmsWatched={userData.films} />
+      <StatsGenrePie filmsWatched={userData.films} />
     </StatCardStyle>
   );
 }
