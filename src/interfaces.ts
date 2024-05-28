@@ -19,11 +19,19 @@ export interface Film {
   date_watched?: Date;
 }
 
-export interface StatsMinsWatchedProps {
-  films: Film[];
+export interface StatsProps {
+  filmsWatched: Film[];
 }
 
-export interface watchMonth {
+export interface WatchMonth {
   month?: string;
   runtime?: number;
+}
+
+export interface ActorObj {
+  actor?: number;
+}
+
+export interface DirectorObj {
+  director?: number;
 }
