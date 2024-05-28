@@ -1,17 +1,20 @@
 import { useContext, useEffect, useState } from "react";
 import { getFilmsByUserId } from "../utils/apiUtils";
 import { Film } from "../interfaces";
+import Error from "./Error";
 import DeleteFilm from "./DeleteFilm";
 import Loading from "./Loading";
 import { FilmsContext } from "../contexts/Films";
 
 export default function FilmHistoryPage() {
-  const [filmsByUserId, setFilmsByUserId] = useState<Film[]>([]);
+  const [filmsById, setFilmsById] = useState<Film[]>([]);
+  const [isError, setIsError] = useState(false);
   const user_id = 5;
   const [isLoading, setIsLoading] = useState(true);
   const { updateFilms, setUpdateFilms } = useContext(FilmsContext);
 
   useEffect(() => {
+      setIsError(false); 
     const storedFilms = localStorage.getItem("filmsByUserId");
     if (storedFilms) {
       setFilmsByUserId(JSON.parse(storedFilms));
@@ -21,11 +24,16 @@ export default function FilmHistoryPage() {
         setFilmsByUserId(data);
         localStorage.setItem("filmsByUserId", JSON.stringify(data));
         setIsLoading(false);
+      }).catch((error) => {
+        setIsError(true);
       });
     }
   }, [updateFilms]);
+     
 
-  return isLoading ? (
+  return isError ? (
+    <Error message="Oops something went wrong, try again later" />
+  ) : isLoading ? (
     <Loading />
   ) : (
     <div className="film-history-page">
@@ -37,7 +45,7 @@ export default function FilmHistoryPage() {
               user_id={user_id}
               setFilmsByUserId={setFilmsByUserId}
             />
-            <img
+             <img
               src={film.poster_url}
               className="film-poster"
               alt={film.title}
@@ -49,3 +57,5 @@ export default function FilmHistoryPage() {
     </div>
   );
 }
+
+           
