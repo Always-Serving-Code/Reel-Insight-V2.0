@@ -23,9 +23,9 @@ export default function StatsPage() {
   }, []);
 
   // TODO: improve error handling
-  if (!userData) {
-    return <p>Something went wrong fetching user</p>;
-  }
+  // if (!userData) {
+  //   return <p>Something went wrong fetching user</p>;
+  // }
 
   return isLoading ? (
     <Loading />
