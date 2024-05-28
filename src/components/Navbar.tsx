@@ -14,7 +14,9 @@ export default function Navbar() {
       <Link to="/history">
         <PiFilmReelFill className={styles.film} />
       </Link>
-      <VscGraphLine className={styles.graph} />
+      <Link to="/stats">
+        <VscGraphLine className={styles.graph} />
+      </Link>
       <Link to="/user">
         <FaRegUserCircle className={styles.user} />
       </Link>

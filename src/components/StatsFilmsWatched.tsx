@@ -2,14 +2,14 @@ import { getUserById } from "../utils/apiUtils";
 import { Line } from "react-chartjs-2";
 import moment from "moment";
 import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend,
+	Chart as ChartJS,
+	CategoryScale,
+	LinearScale,
+	PointElement,
+	LineElement,
+	Title,
+	Tooltip,
+	Legend,
 } from "chart.js";
 import "../App.css";
 
@@ -32,7 +32,6 @@ export default function StatsFilmsWatched() {
       monthArr.push(month);
     });
   }
-
   ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -56,7 +55,6 @@ export default function StatsFilmsWatched() {
     maintainAspectRatio: true,
     aspectRatio: 1,
   };
-
   const labels = [
     "January",
     "February",

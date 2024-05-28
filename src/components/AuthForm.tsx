@@ -56,7 +56,7 @@ export default function AuthForm() {
         ""
       )}
 
-      <Link to="home">
+      <Link to="/home">
         <button
           className="button-submit-auth"
           type="submit"
