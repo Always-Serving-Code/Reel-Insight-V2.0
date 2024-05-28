@@ -8,20 +8,23 @@ import FilmHistoryPage from "./components/FilmHistoryPage";
 import UserAccountPage from "./components/UserAccountPage";
 import StatsPage from "./components/StatsPage";
 import { UserProvider } from "./contexts/User";
+import { FilmsProvider } from "./contexts/Films";
 
 function App() {
   return (
     <main>
       <UserProvider>
-        <Header />
-        <Routes>
-          <Route path="/" element={<AuthForm />} />
-          <Route path="/home" element={<Homepage />} />
-          <Route path="/users/5/history" element={<FilmHistoryPage />} />
-          <Route path="/user" element={<UserAccountPage />} />
-          <Route path="/stats" element={<StatsPage />} />
-        </Routes>
-        <Navbar />
+        <FilmsProvider>
+          <Header />
+          <Routes>
+            <Route path="/" element={<AuthForm />} />
+            <Route path="/home" element={<Homepage />} />
+            <Route path="/users/5/history" element={<FilmHistoryPage />} />
+            <Route path="/user" element={<UserAccountPage />} />
+            <Route path="/stats" element={<StatsPage />} />
+          </Routes>
+          <Navbar />
+        </FilmsProvider>
       </UserProvider>
     </main>
   );

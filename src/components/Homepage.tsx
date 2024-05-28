@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { Film } from "../interfaces";
 import { getUserById } from "../utils/apiUtils";
 import Loading from "./Loading";
+import FilmHistoryPage from "./FilmHistoryPage";
 
 export default function Homepage() {
   const [filmsWatched, setFilmsWatched] = useState<Array<Film>>([]);
@@ -26,6 +27,8 @@ export default function Homepage() {
       <StatCardStyle>
         <StatsFilmsWatched filmsWatched={filmsWatched} />
       </StatCardStyle>
+      <p>Recently watched films</p>
+      <FilmHistoryPage />
     </div>
   );
 }

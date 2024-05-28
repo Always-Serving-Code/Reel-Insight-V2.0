@@ -1,27 +1,29 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { getFilmsByUserId } from "../utils/apiUtils";
 import { Film } from "../interfaces";
 import DeleteFilm from "./DeleteFilm";
 import Loading from "./Loading";
+import { FilmsContext } from "../contexts/Films";
 
 export default function FilmHistoryPage() {
   const [filmsByUserId, setFilmsByUserId] = useState<Film[]>([]);
   const user_id = 5;
   const [isLoading, setIsLoading] = useState(true);
+  const { updateFilms, setUpdateFilms } = useContext(FilmsContext);
 
   useEffect(() => {
     const storedFilms = localStorage.getItem("filmsByUserId");
     if (storedFilms) {
       setFilmsByUserId(JSON.parse(storedFilms));
-      setIsLoading(false); 
+      setIsLoading(false);
     } else {
       getFilmsByUserId(user_id).then((data) => {
         setFilmsByUserId(data);
         localStorage.setItem("filmsByUserId", JSON.stringify(data));
-        setIsLoading(false); 
+        setIsLoading(false);
       });
     }
-  }, []);
+  }, [updateFilms]);
 
   return isLoading ? (
     <Loading />

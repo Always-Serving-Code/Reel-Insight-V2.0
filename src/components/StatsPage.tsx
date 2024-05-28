@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import StatsMinsWatched from "./StatsMinsWatched";
 import { getUserById } from "../utils/apiUtils";
 import { User } from "../interfaces";
@@ -9,10 +9,12 @@ import StatsTopDirectors from "./StatsTopDirectors";
 import StatsDecadePie from "./StatsDecadePie";
 import StatsGenrePie from "./StatsGenrePie";
 import Loading from "./Loading";
+import { FilmsContext } from "../contexts/Films";
 
 export default function StatsPage() {
   const [userData, setUserData] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const { updateFilms, setUpdateFilms } = useContext(FilmsContext);
 
   useEffect(() => {
     setIsLoading(true);
@@ -20,7 +22,7 @@ export default function StatsPage() {
       setUserData(user);
       setIsLoading(false);
     });
-  }, []);
+  }, [updateFilms]);
 
   // TODO: improve error handling
   // if (!userData) {
