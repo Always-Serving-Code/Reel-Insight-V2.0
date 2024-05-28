@@ -8,6 +8,7 @@ import StatsTopActors from "./StatsTopActors";
 import StatsTopDirectors from "./StatsTopDirectors";
 import StatsDecadePie from "./StatsDecadePie";
 import StatsGenrePie from "./StatsGenrePie";
+import Loading from "./Loading";
 
 export default function StatsPage() {
   const [userData, setUserData] = useState<User | null>(null);
@@ -21,17 +22,14 @@ export default function StatsPage() {
     });
   }, []);
 
-  // TODO: improve Loading UI
-  if (isLoading) {
-    return <p>Loading...</p>;
-  }
-
   // TODO: improve error handling
-  if (!userData) {
-    return <p>Something went wrong fetching user</p>;
-  }
+  // if (!userData) {
+  //   return <p>Something went wrong fetching user</p>;
+  // }
 
-  return (
+  return isLoading ? (
+    <Loading />
+  ) : (
     <StatCardStyle>
       <StatsMinsWatched filmsWatched={userData.films} />
       <StatsFilmsWatched filmsWatched={userData.films} />
