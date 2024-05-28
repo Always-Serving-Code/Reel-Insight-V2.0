@@ -52,7 +52,7 @@ export default function StatsDecadePie(props: StatsProps) {
       labels: decades,
       datasets: [
         {
-          label: "Top Decades",
+          label: "Number of Films",
           data: decadesData,
           backgroundColor: [
             "rgba(255, 99, 132, 0.2)",

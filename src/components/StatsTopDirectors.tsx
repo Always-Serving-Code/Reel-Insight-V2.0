@@ -9,7 +9,7 @@ import {
 } from "chart.js";
 import "../App.css";
 import { Bar } from "react-chartjs-2";
-import { StatsProps, directorObj } from "../interfaces";
+import { StatsProps, DirectorObj } from "../interfaces";
 
 export default function StatsTopDirectors(props: StatsProps) {
   const { filmsWatched } = props;
@@ -53,7 +53,7 @@ export default function StatsTopDirectors(props: StatsProps) {
     (value, index) => directors.indexOf(value) === index
   );
 
-  const directorObj: directorObj = {};
+  const directorObj: DirectorObj = {};
   directors.forEach((director) => {
     if (director in directorObj) {
       directorObj[director] = directorObj[director] + 1;

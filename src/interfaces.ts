@@ -39,3 +39,6 @@ export interface DirectorObj {
 export interface YearObj {
   decade?: string;
 }
+export interface GenreObj {
+  genre?: string;
+}

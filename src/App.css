@@ -1,93 +1,93 @@
 * {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-	margin: 0;
+  margin: 0;
 }
 .header {
-	padding: 10px;
-	position: sticky;
-	top: 0;
-	z-index: 9999;
-	font-size: 20px;
-	border-bottom: 1px solid black;
-	background-color: #ffffff;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  font-size: 20px;
+  border-bottom: 1px solid black;
+  background-color: #ffffff;
 }
 
 /* Authorization Form  */
 .option {
-	font-size: 30px;
+  font-size: 30px;
 }
 
 .log-in-form,
 .sign-up-form {
-	margin-top: 35%;
-	text-align: center;
+  margin-top: 35%;
+  text-align: center;
 }
 
 .user-info-label {
-	margin: 20px;
+  margin: 20px;
 }
 .user-info-label input {
-	border-top: 0;
-	border-left: 0;
-	border-right: 0;
-	padding: 12px;
-	width: 90%;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  padding: 12px;
+  width: 90%;
 }
 .user-info-label input::placeholder {
-	color: #c2c2c2;
+  color: #c2c2c2;
 }
 
 .button-submit-auth {
-	border-radius: 10px;
-	padding: 12px;
-	background-color: #ffffff;
+  border-radius: 10px;
+  padding: 12px;
+  background-color: #ffffff;
 }
 
 .button-auth-form {
-	border: 0;
-	background-color: #ffffff;
-	padding: 8px;
-	margin-top: 10px;
+  border: 0;
+  background-color: #ffffff;
+  padding: 8px;
+  margin-top: 10px;
 }
 
 .extra-options {
-	margin: 20px;
+  margin: 20px;
 }
 .extra-options button {
-	border-radius: 10px;
-	padding: 12px;
-	background-color: #ffffff;
+  border-radius: 10px;
+  padding: 12px;
+  background-color: #ffffff;
 }
 
 /* stats */
 .statCardStyle {
-	padding: 30px;
+  padding: 30px;
 }
 
 /* Film search bar */
 .film-search {
   position: absolute;
-	width: 100%;
-	margin: auto;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .film-search-bar {
-	width: 60%;
-	margin: auto;
+  width: 60%;
+  margin: auto;
 }
 
 .film-search-results {
-	list-style: none;
-	width: 60%;
-	max-height: 60vh;
-	overflow-y: scroll;
+  list-style: none;
+  width: 60%;
+  max-height: 60vh;
+  overflow-y: scroll;
   background: rgb(240, 240, 240);
 }
 
@@ -98,39 +98,37 @@ body {
 }
 
 .film-search-img {
-	height: 50px;
+  height: 50px;
   width: 32px;
   margin-right: 5px;
-  
 }
 /* Films History Page */
 .film-history-page {
-	padding: 20px;
-  }
-  
-  .film-list {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 20px;
-	justify-content: center;
-  }
-  
-  .film-item {
-	width: 45%;
-	border-radius: 5px;
-	overflow: hidden;
-	text-align: center;
-	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .film-title {
-	margin: 10px 0;
-	font-size: 14px;
-  }
-  
-  .film-poster {
-	width: 100%;
-	height: 70%;
-	display: block;
-  }
-  
+  padding: 20px;
+}
+
+.film-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.film-item {
+  width: 45%;
+  border-radius: 5px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.film-title {
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.film-poster {
+  width: 100%;
+  height: 70%;
+  display: block;
+}
