@@ -20,7 +20,7 @@ export default function StatsFilmsWatched() {
 
   useEffect(() => {
     getUserById(5).then((user) => {
-      setFilmsWatched(user.user.data.user.films);
+      setFilmsWatched(user.films);
     });
   }, []);
 
