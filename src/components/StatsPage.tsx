@@ -4,6 +4,8 @@ import { getUserById } from "../utils/apiUtils";
 import { User } from "../interfaces";
 import StatCardStyle from "./styling/StatCardStyle";
 import StatsFilmsWatched from "./StatsFilmsWatched";
+import StatsTopActors from "./StatsTopActors";
+import StatsTopDirectors from "./StatsTopDirectors";
 
 export default function StatsPage() {
   const [userData, setUserData] = useState<User | null>(null);
@@ -29,8 +31,10 @@ export default function StatsPage() {
 
   return (
     <StatCardStyle>
-      {<StatsMinsWatched films={userData.films} />}
-      {<StatsFilmsWatched />}
+      <StatsMinsWatched filmsWatched={userData.films} />
+      <StatsFilmsWatched filmsWatched={userData.films} />
+      <StatsTopActors filmsWatched={userData.films} />
+      <StatsTopDirectors filmsWatched={userData.films} />
     </StatCardStyle>
   );
 }

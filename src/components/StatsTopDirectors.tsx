@@ -1,4 +1,3 @@
-import { ActorObj } from "../interfaces";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -10,15 +9,15 @@ import {
 } from "chart.js";
 import "../App.css";
 import { Bar } from "react-chartjs-2";
-import { StatsProps } from "../interfaces";
+import { StatsProps, directorObj } from "../interfaces";
 
-export default function StatsTopActors(props: StatsProps) {
+export default function StatsTopDirectors(props: StatsProps) {
   const { filmsWatched } = props;
-  const actors: string[] = [];
+  const directors: Array<string> = [];
   if (filmsWatched.length) {
     filmsWatched.forEach((film) => {
-      film["lead_actors"].forEach((actor: string) => {
-        actors.push(actor);
+      film["directors"].forEach((director: string) => {
+        directors.push(director);
       });
     });
   }
@@ -45,30 +44,30 @@ export default function StatsTopActors(props: StatsProps) {
       },
       title: {
         display: true,
-        text: "Most Watched Actors",
+        text: "Favourite Directors",
       },
     },
   };
 
-  const filteredActors = actors.filter(
-    (value, index) => actors.indexOf(value) === index
+  const filteredDirectors = directors.filter(
+    (value, index) => directors.indexOf(value) === index
   );
 
-  const actorObj: ActorObj = {};
-  actors.forEach((actor) => {
-    if (actor in actorObj) {
-      actorObj[actor] = actorObj[actor] + 1;
+  const directorObj: directorObj = {};
+  directors.forEach((director) => {
+    if (director in directorObj) {
+      directorObj[director] = directorObj[director] + 1;
     } else {
-      actorObj[actor] = 1;
+      directorObj[director] = 1;
     }
   });
 
   const dataArr: Array<number> = [];
-  for (const actorData in actorObj) {
-    dataArr.push(actorObj[actorData]);
+  for (const directorData in directorObj) {
+    dataArr.push(directorObj[directorData]);
   }
 
-  const labels = filteredActors;
+  const labels = filteredDirectors;
   const data = {
     labels,
     datasets: [

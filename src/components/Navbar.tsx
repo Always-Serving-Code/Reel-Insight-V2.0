@@ -8,17 +8,17 @@ import styles from "../css modules/Navbar.module.css";
 export default function Navbar() {
   return (
     <nav className={styles.icons}>
-      <Link to="/home">
-        <MdHome className={styles.home} />
+      <Link to="/home" className={styles.link}>
+        <MdHome />
       </Link>
-      <Link to="/history">
-        <PiFilmReelFill className={styles.film} />
+      <Link to="/history" className={styles.link}>
+        <PiFilmReelFill />
       </Link>
-      <Link to="/stats">
-        <VscGraphLine className={styles.graph} />
+      <Link to="/stats" className={styles.link}>
+        <VscGraphLine />
       </Link>
-      <Link to="/user">
-        <FaRegUserCircle className={styles.user} />
+      <Link to="/user" className={styles.link}>
+        <FaRegUserCircle />
       </Link>
     </nav>
   );

@@ -1,4 +1,3 @@
-import { getUserById } from "../utils/apiUtils";
 import { Line } from "react-chartjs-2";
 import moment from "moment";
 import {
@@ -12,21 +11,14 @@ import {
   Legend,
 } from "chart.js";
 import "../App.css";
+import { StatsProps, Film } from "../interfaces";
 
-import { useEffect, useState } from "react";
-
-export default function StatsFilmsWatched() {
-  const [filmsWatched, setFilmsWatched] = useState([]);
-
-  useEffect(() => {
-    getUserById(5).then((user) => {
-      setFilmsWatched(user.films);
-    });
-  }, []);
+export default function StatsFilmsWatched(props: StatsProps) {
+  const { filmsWatched } = props;
 
   const monthArr: Array<string> = [];
   if (filmsWatched.length) {
-    filmsWatched.forEach((film) => {
+    filmsWatched.forEach((film: Film) => {
       const date = film["date_watched"];
       const month = moment(date, "YYYY-MM-DDTHH:mm:ss.SSS[Z]").format("MMMM");
       monthArr.push(month);
