@@ -10,11 +10,8 @@ export default function Navbar() {
       <Link to="/home" className="link">
         <MdHome />
       </Link>
-      <Link to="/history" className="link">
+      <Link to="/users/5/history" className="link">
         <PiFilmReelFill />
-      </Link>
-      <Link to="/users/5/history">
-        <PiFilmReelFill className={styles.film} />
       </Link>
       <Link to="/stats" className="link">
         <VscGraphLine />
