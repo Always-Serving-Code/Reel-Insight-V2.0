@@ -1,25 +1,38 @@
 import { useEffect, useState } from "react";
 import { getFilmsByUserId } from "../utils/apiUtils";
 import { Film } from "../interfaces";
+import DeleteFilm from "./DeleteFilm";
 import Loading from "./Loading";
 
 export default function FilmHistoryPage() {
-  const [filmsById, setFilmsById] = useState<Film[]>([]);
+  const [filmsByUserId, setFilmsByUserId] = useState<Film[]>([]);
+  const user_id = 5;
   const [isLoading] = useState(true);
 
   useEffect(() => {
-    getFilmsByUserId(5).then((data) => {
-      setFilmsById(data);
-    });
+    const storedFilms = localStorage.getItem("filmsByUserId");
+    if (storedFilms) {
+      setFilmsByUserId(JSON.parse(storedFilms));
+    } else {
+      getFilmsByUserId(user_id).then((data) => {
+        setFilmsByUserId(data);
+      });
+    }
   }, []);
+  
 
   return isLoading ? (
     <Loading />
   ) : (
     <div className="film-history-page">
       <ul className="film-list">
-        {filmsById.map((film) => (
-          <li key={film._id} className="film-item">
+        {filmsByUserId.map((film: Film) => (
+          <li key={film["_id"]} className="film-item">
+            <DeleteFilm
+              film_id={film["_id"]}
+              user_id={user_id}
+              setFilmsByUserId={setFilmsByUserId}
+            />
             <img
               src={film.poster_url}
               className="film-poster"
