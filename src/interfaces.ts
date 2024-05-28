@@ -16,19 +16,35 @@ export interface Film {
   lead_actors: string[];
   runtime: number;
   __v?: number;
+  date_watched?: Date;
 }
 
-export interface StatsMinsWatchedProps {
-  films: Film[];
+export interface StatsProps {
+  filmsWatched: Film[];
 }
 
-export interface watchMonth {
+export interface WatchMonth {
   month?: string;
   runtime?: number;
 }
 
+export interface ActorObj {
+  actor?: number;
+}
+
+export interface DirectorObj {
+  director?: number;
+}
+
+export interface YearObj {
+  decade?: string;
+}
+export interface GenreObj {
+  genre?: string;
+}
 export interface DeleteProps{
   film_id: string | number | undefined;
   user_id: string | number | undefined;
   setFilmsByUserId : any
 }
+

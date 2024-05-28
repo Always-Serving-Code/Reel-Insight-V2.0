@@ -7,6 +7,7 @@ import Homepage from "./components/Homepage";
 import FilmHistoryPage from "./components/FilmHistoryPage";
 import UserAccountPage from "./components/UserAccountPage";
 import StatsPage from "./components/StatsPage";
+import { UserProvider } from "./contexts/User";
 
 function App() {
   return (

@@ -1,13 +1,30 @@
 import StatCardStyle from "../components/styling/StatCardStyle";
 import StatsFilmsWatched from "./StatsFilmsWatched";
 import FilmSearch from "./FilmSearch";
+import { useEffect, useState } from "react";
+import { Film } from "../interfaces";
+import { getUserById } from "../utils/apiUtils";
+import Loading from "./Loading";
 
 export default function Homepage() {
-  return (
+  const [filmsWatched, setFilmsWatched] = useState<Array<Film>>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setIsLoading(true);
+    getUserById(5).then((user) => {
+      setFilmsWatched(user.films);
+      setIsLoading(false);
+    });
+  }, []);
+
+  return isLoading ? (
+    <Loading />
+  ) : (
     <div>
       <FilmSearch />
       <StatCardStyle>
-        <StatsFilmsWatched />
+        <StatsFilmsWatched filmsWatched={filmsWatched} />
       </StatCardStyle>
     </div>
   );

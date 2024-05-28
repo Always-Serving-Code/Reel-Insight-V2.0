@@ -1,32 +1,24 @@
-import { getUserById } from "../utils/apiUtils";
 import { Line } from "react-chartjs-2";
 import moment from "moment";
 import {
-	Chart as ChartJS,
-	CategoryScale,
-	LinearScale,
-	PointElement,
-	LineElement,
-	Title,
-	Tooltip,
-	Legend,
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
 } from "chart.js";
 import "../App.css";
+import { StatsProps, Film } from "../interfaces";
 
-import { useEffect, useState } from "react";
-
-export default function StatsFilmsWatched() {
-  const [filmsWatched, setFilmsWatched] = useState([]);
-
-  useEffect(() => {
-    getUserById(5).then((user) => {
-      setFilmsWatched(user.user.data.user.films);
-    });
-  }, []);
+export default function StatsFilmsWatched(props: StatsProps) {
+  const { filmsWatched } = props;
 
   const monthArr: Array<string> = [];
   if (filmsWatched.length) {
-    filmsWatched.forEach((film) => {
+    filmsWatched.forEach((film: Film) => {
       const date = film["date_watched"];
       const month = moment(date, "YYYY-MM-DDTHH:mm:ss.SSS[Z]").format("MMMM");
       monthArr.push(month);
@@ -74,7 +66,7 @@ export default function StatsFilmsWatched() {
 
   labels.forEach((month) => {
     let count = 0;
-    monthArr.forEach((watchMonth: String) => {
+    monthArr.forEach((watchMonth: string) => {
       if (month === watchMonth) {
         count++;
       }

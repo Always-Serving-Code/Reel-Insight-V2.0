@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import { getFilmsByUserId } from "../utils/apiUtils";
 import { Film } from "../interfaces";
 import DeleteFilm from "./DeleteFilm";
+import Loading from "./Loading";
 
 export default function FilmHistoryPage() {
   const [filmsByUserId, setFilmsByUserId] = useState<Film[]>([]);
   const user_id = 5;
+  const [isLoading] = useState(true);
 
   useEffect(() => {
     const storedFilms = localStorage.getItem("filmsByUserId");
@@ -19,7 +21,9 @@ export default function FilmHistoryPage() {
   }, []);
   
 
-  return (
+  return isLoading ? (
+    <Loading />
+  ) : (
     <div className="film-history-page">
       <ul className="film-list">
         {filmsByUserId.map((film: Film) => (

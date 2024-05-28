@@ -133,6 +133,11 @@ body {
   height: 70%;
   display: block;
 }
+.spinnerContainer {
+  text-align: center;
+  margin-top: 70%;
+}
+
 
 .confirm-popup {
   position: fixed;
