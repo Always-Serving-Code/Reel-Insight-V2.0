@@ -6,19 +6,21 @@ import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
+    <div className="nav-bar">
     <nav className="icons">
-      <Link to="/home" className="link">
+      <Link to="/home" className="nav-link" >
         <MdHome />
       </Link>
-      <Link to="/users/5/history" className="link">
+      <Link to="/users/5/history" className="nav-link">
         <PiFilmReelFill />
       </Link>
-      <Link to="/stats" className="link">
+      <Link to="/stats" className="nav-link">
         <VscGraphLine />
       </Link>
-      <Link to="/user" className="link">
+      <Link to="/user" className="nav-link">
         <FaRegUserCircle />
       </Link>
     </nav>
+    </div>
   );
 }
