@@ -21,3 +21,10 @@ export const getUserById = (user_id: number) => {
       return { user };
     });
 };
+
+
+export const getFilmsByUserId = (user_id: number) => {
+	return client.get(`users/${user_id}/films`).then((response: Response) => {
+		return response["data"]["films"];
+	});
+}
