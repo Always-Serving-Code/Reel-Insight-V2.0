@@ -141,23 +141,31 @@ body {
 }
 
 /* Navbar */
-.icons {
-  position: absolute;
+.nav-bar {
+  padding: 5px 40px;
   bottom: 0;
   left: 0;
-  width: 100%;
+  right: 0;
+  z-index: 9999;
+  border-top: 1px solid black;
+  background-color: #ffffff;
+  position: fixed;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.icons {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
-  box-sizing: border-box;
+  width: 100%;
 }
 
-.link {
+.nav-link {
   font-size: 2rem;
   display: flex;
   gap: 15px;
   align-items: center;
+  color: black;
 }
 
 /* User account page */
@@ -186,7 +194,7 @@ body {
 .confirm-popup {
   position: fixed;
   z-index: 1000;
-  background-color:  rgb(255, 255, 255, 0.9);
+  background-color: rgb(255, 255, 255, 0.9);
   top: 40vh;
   right: 10%;
   left: 10%;
