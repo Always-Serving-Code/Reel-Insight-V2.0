@@ -17,7 +17,6 @@ export default function Navbar() {
       <Link to="/stats">
         <VscGraphLine className={styles.graph} />
       </Link>
-
       <Link to="/user">
         <FaRegUserCircle className={styles.user} />
       </Link>
