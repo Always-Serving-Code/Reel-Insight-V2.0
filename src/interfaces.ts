@@ -16,6 +16,7 @@ export interface Film {
   lead_actors: string[];
   runtime: number;
   __v?: number;
+  date_watched?: Date;
 }
 
 export interface StatsMinsWatchedProps {

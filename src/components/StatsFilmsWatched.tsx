@@ -14,9 +14,10 @@ import {
 import "../App.css";
 
 import { useEffect, useState } from "react";
+import { Film } from "../interfaces";
 
 export default function StatsFilmsWatched() {
-  const [filmsWatched, setFilmsWatched] = useState([]);
+  const [filmsWatched, setFilmsWatched] = useState<Film | Array>([]);
 
   useEffect(() => {
     getUserById(5).then((user) => {
