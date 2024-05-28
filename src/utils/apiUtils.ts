@@ -29,7 +29,8 @@ export const getFilmsByUserId = (user_id: number) => {
 };
 
 export const deleteFilmByIdByUserId = (user_id: number, film_id: number) => {
-	return client.delete(`users/${user_id}/${film_id}`);
-  
+	return client.delete(`users/${user_id}/${film_id}`).then((response: Response) => {
+    return response;
+  });
   };
   

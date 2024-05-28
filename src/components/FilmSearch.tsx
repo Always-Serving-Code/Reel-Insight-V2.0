@@ -22,7 +22,7 @@ export default function FilmSearch() {
 	function onInputChange(e: React.FormEvent<HTMLInputElement>) {
 		setCurrentSearch(e.currentTarget.value);
 	}
-	console.log(filteredFilms);
+
 
 	return (
 		<form className="film-search">

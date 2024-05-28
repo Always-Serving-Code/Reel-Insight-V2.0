@@ -6,21 +6,14 @@ import Loading from "./Loading";
 
 export default function FilmHistoryPage() {
   const [filmsByUserId, setFilmsByUserId] = useState<Film[]>([]);
-  const user_id = 5;
   const [isLoading, setIsLoading] = useState(true);
+  const user_id = 5;
 
   useEffect(() => {
-    const storedFilms = localStorage.getItem("filmsByUserId");
-    if (storedFilms) {
-      setFilmsByUserId(JSON.parse(storedFilms));
+    getFilmsByUserId(user_id).then((data) => {
+      setFilmsByUserId(data);
       setIsLoading(false); 
-    } else {
-      getFilmsByUserId(user_id).then((data) => {
-        setFilmsByUserId(data);
-        localStorage.setItem("filmsByUserId", JSON.stringify(data));
-        setIsLoading(false); 
-      });
-    }
+    });
   }, []);
 
   return isLoading ? (
@@ -33,6 +26,7 @@ export default function FilmHistoryPage() {
             <DeleteFilm
               film_id={film["_id"]}
               user_id={user_id}
+              filmsByUserId={filmsByUserId}
               setFilmsByUserId={setFilmsByUserId}
             />
             <img
