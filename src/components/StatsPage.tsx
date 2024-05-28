@@ -11,8 +11,8 @@ export default function StatsPage() {
 
   useEffect(() => {
     setIsLoading(true);
-    getUserById(5).then(({ user }) => {
-      setUserData(user.data.user);
+    getUserById(5).then((user) => {
+      setUserData(user);
       setIsLoading(false);
     });
   }, []);
