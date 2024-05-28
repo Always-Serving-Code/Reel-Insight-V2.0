@@ -8,17 +8,23 @@ import StatsTopActors from "./StatsTopActors";
 import StatsTopDirectors from "./StatsTopDirectors";
 import StatsDecadePie from "./StatsDecadePie";
 import StatsGenrePie from "./StatsGenrePie";
+import Error from "./Error";
 
 export default function StatsPage() {
   const [userData, setUserData] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
 
   useEffect(() => {
     setIsLoading(true);
-    getUserById(5).then((user) => {
-      setUserData(user);
-      setIsLoading(false);
-    });
+    getUserById(5)
+      .then((user) => {
+        setUserData(user);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        setIsError(true);
+      });
   }, []);
 
   // TODO: improve Loading UI
@@ -26,12 +32,9 @@ export default function StatsPage() {
     return <p>Loading...</p>;
   }
 
-  // TODO: improve error handling
-  if (!userData) {
-    return <p>Something went wrong fetching user</p>;
-  }
-
-  return (
+  return isError ? (
+    <Error message="Oops something went wrong, try again later" />
+  ) : (
     <StatCardStyle>
       <StatsMinsWatched filmsWatched={userData.films} />
       <StatsFilmsWatched filmsWatched={userData.films} />
