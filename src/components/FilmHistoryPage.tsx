@@ -7,19 +7,21 @@ import Loading from "./Loading";
 export default function FilmHistoryPage() {
   const [filmsByUserId, setFilmsByUserId] = useState<Film[]>([]);
   const user_id = 5;
-  const [isLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const storedFilms = localStorage.getItem("filmsByUserId");
     if (storedFilms) {
       setFilmsByUserId(JSON.parse(storedFilms));
+      setIsLoading(false); 
     } else {
       getFilmsByUserId(user_id).then((data) => {
         setFilmsByUserId(data);
+        localStorage.setItem("filmsByUserId", JSON.stringify(data));
+        setIsLoading(false); 
       });
     }
   }, []);
-  
 
   return isLoading ? (
     <Loading />

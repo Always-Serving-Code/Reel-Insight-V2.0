@@ -12,15 +12,17 @@ import { UserProvider } from "./contexts/User";
 function App() {
   return (
     <main>
-      <Header />
-      <Routes>
-        <Route path="/" element={<AuthForm />} />
-        <Route path="/home" element={<Homepage />} />
-        <Route path="/users/5/history" element={<FilmHistoryPage />} />
-        <Route path="/user" element={<UserAccountPage />} />
-        <Route path="/stats" element={<StatsPage />} />
-      </Routes>
-      <Navbar />
+      <UserProvider>
+        <Header />
+        <Routes>
+          <Route path="/" element={<AuthForm />} />
+          <Route path="/home" element={<Homepage />} />
+          <Route path="/users/5/history" element={<FilmHistoryPage />} />
+          <Route path="/user" element={<UserAccountPage />} />
+          <Route path="/stats" element={<StatsPage />} />
+        </Routes>
+        <Navbar />
+      </UserProvider>
     </main>
   );
 }
