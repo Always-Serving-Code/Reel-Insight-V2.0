@@ -45,6 +45,7 @@ export interface GenreObj {
 export interface DeleteProps{
   film_id: string | number | undefined;
   user_id: string | number | undefined;
-  setFilmsByUserId : any
+  setFilmsByUserId : any;
+  filmsByUserId: any;
 }
 

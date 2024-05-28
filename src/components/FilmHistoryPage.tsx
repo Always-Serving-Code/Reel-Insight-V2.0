@@ -7,29 +7,21 @@ import Loading from "./Loading";
 import { FilmsContext } from "../contexts/Films";
 
 export default function FilmHistoryPage() {
-  const [filmsById, setFilmsById] = useState<Film[]>([]);
+  const [filmsByUserId, setFilmsByUserId] = useState<Film[]>([]);
   const [isError, setIsError] = useState(false);
-  const user_id = 5;
   const [isLoading, setIsLoading] = useState(true);
-  const { updateFilms, setUpdateFilms } = useContext(FilmsContext);
+  const user_id = 5;
 
   useEffect(() => {
-      setIsError(false); 
-    const storedFilms = localStorage.getItem("filmsByUserId");
-    if (storedFilms) {
-      setFilmsByUserId(JSON.parse(storedFilms));
-      setIsLoading(false);
-    } else {
-      getFilmsByUserId(user_id).then((data) => {
-        setFilmsByUserId(data);
-        localStorage.setItem("filmsByUserId", JSON.stringify(data));
-        setIsLoading(false);
-      }).catch((error) => {
-        setIsError(true);
-      });
-    }
+       setIsError(false); 
+    getFilmsByUserId(user_id).then((data) => {
+      setFilmsByUserId(data);
+      setIsLoading(false); 
+   }).catch((error) => {
+       setIsError(true);
+     });
+   }
   }, [updateFilms]);
-     
 
   return isError ? (
     <Error message="Oops something went wrong, try again later" />
@@ -43,6 +35,7 @@ export default function FilmHistoryPage() {
             <DeleteFilm
               film_id={film["_id"]}
               user_id={user_id}
+              filmsByUserId={filmsByUserId}
               setFilmsByUserId={setFilmsByUserId}
             />
              <img

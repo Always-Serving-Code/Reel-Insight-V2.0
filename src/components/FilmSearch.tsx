@@ -29,6 +29,7 @@ export default function FilmSearch() {
     setCurrentSearch(e.currentTarget.value);
   }
 
+
   return isError ? (
     <Error message="Oops something went wrong, try again later" />
   ) : (

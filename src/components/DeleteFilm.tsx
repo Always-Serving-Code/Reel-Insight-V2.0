@@ -8,6 +8,7 @@ import { FilmsContext } from "../contexts/Films";
 export default function DeleteFilm({
   film_id,
   user_id,
+  filmsByUserId,
   setFilmsByUserId,
 }: DeleteProps) {
   const [showConfirmation, setShowConfirmation] = useState(false);
@@ -16,21 +17,23 @@ export default function DeleteFilm({
   function handleDeleteClick() {
     setShowConfirmation(true);
   }
-
   function handleConfirmDelete() {
     setShowConfirmation(false);
-    deleteFilmByIdByUserId(Number(user_id), Number(film_id)).then(() => {
-      setFilmsByUserId((current: any) => {
-        const updatedFilms = current.filter((film: Film) => {
-          return film["_id"] !== film_id;
-        });
-        localStorage.setItem("filmsByUserId", JSON.stringify(updatedFilms));
-        setUpdateFilms(!updateFilms);
-        return updatedFilms;
+
+    deleteFilmByIdByUserId(Number(user_id), Number(film_id)).then((response) => {
+      console.log(response);
+      filmsByUserId.forEach((film: Film, i: number) => {
+        if (film["_id"] === film_id) {
+          console.log(film);
+          setFilmsByUserId((current: any) => {
+            const newFilms = [...current];
+            newFilms.splice(i, 1);
+            return newFilms;
+          });
+        }
       });
     });
   }
-
   function handleCancelDelete() {
     setShowConfirmation(false);
   }
