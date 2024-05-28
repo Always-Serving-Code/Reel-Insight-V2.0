@@ -13,8 +13,7 @@ import {
 } from "chart.js";
 import "../App.css";
 
-import { useEffect, useState } from "react";
-
+// import { useEffect, useState } from "react";
 export default function StatsFilmsWatched() {
   const [filmsWatched, setFilmsWatched] = useState([]);
 
@@ -32,31 +31,6 @@ export default function StatsFilmsWatched() {
       monthArr.push(month);
     });
   }
-
-  ChartJS.register(
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    LineElement,
-    Title,
-    Tooltip,
-    Legend
-  );
-  const options = {
-    responsive: true,
-    plugins: {
-      legend: {
-        position: "top" as const,
-      },
-      title: {
-        display: true,
-        text: "Films Watched",
-      },
-    },
-    maintainAspectRatio: true,
-    aspectRatio: 1,
-  };
-
   const labels = [
     "January",
     "February",
