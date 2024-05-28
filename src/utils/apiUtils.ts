@@ -5,14 +5,14 @@ const client = axios.create({
 });
 
 interface Response {
-	data: any | object;
+  data: any | object;
 }
 
 export const getFilms = () => {
-	return client.get("films").then((response: Response) => {
-		return response["data"]["films"];
-	});
-}
+  return client.get("films").then((response: Response) => {
+    return response["data"]["films"];
+  });
+};
 
 export const getUserById = (user_id: number) => {
   return axios
@@ -22,9 +22,14 @@ export const getUserById = (user_id: number) => {
     });
 };
 
-
 export const getFilmsByUserId = (user_id: number) => {
-	return client.get(`users/${user_id}/films`).then((response: Response) => {
-		return response["data"]["films"];
-	});
-}
+  return client.get(`users/${user_id}/films`).then((response: Response) => {
+    return response["data"]["films"];
+  });
+};
+
+export const deleteFilmByIdByUserId = (user_id: number, film_id: number) => {
+	return client.delete(`users/${user_id}/${film_id}`);
+  
+  };
+  

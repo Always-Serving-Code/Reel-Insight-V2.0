@@ -26,3 +26,9 @@ export interface watchMonth {
   month?: string;
   runtime?: number;
 }
+
+export interface DeleteProps{
+  film_id: string | number | undefined;
+  user_id: string | number | undefined;
+  setFilmsByUserId : any
+}

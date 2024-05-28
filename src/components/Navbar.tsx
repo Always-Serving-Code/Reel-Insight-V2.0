@@ -11,7 +11,7 @@ export default function Navbar() {
       <Link to="/home">
         <MdHome className={styles.home} />
       </Link>
-      <Link to="/history">
+      <Link to="/users/5/history">
         <PiFilmReelFill className={styles.film} />
       </Link>
       <Link to="/stats">
