@@ -35,3 +35,7 @@ export interface ActorObj {
 export interface DirectorObj {
   director?: number;
 }
+
+export interface YearObj {
+  decade?: string;
+}
