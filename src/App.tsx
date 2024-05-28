@@ -7,21 +7,23 @@ import Homepage from "./components/Homepage";
 import FilmHistoryPage from "./components/FilmHistoryPage";
 import UserAccountPage from "./components/UserAccountPage";
 import StatsPage from "./components/StatsPage";
+import AddFilmToWatchList from "./components/AddFilmToWatchList";
 
 function App() {
-  return (
-    <main>
-      <Header />
-      <Routes>
-        <Route path="/" element={<AuthForm />} />
-        <Route path="/home" element={<Homepage />} />
-        <Route path="/history" element={<FilmHistoryPage />} />
-        <Route path="/user" element={<UserAccountPage />} />
-        <Route path="/stats" element={<StatsPage />} />
-      </Routes>
-      <Navbar />
-    </main>
-  );
+	return (
+		<main>
+			<Header />
+			<Routes>
+				<Route path="/" element={<AuthForm />} />
+				<Route path="/home" element={<Homepage />} />
+				<Route path="/history" element={<FilmHistoryPage />} />
+				<Route path="/user" element={<UserAccountPage />} />
+				<Route path="/stats" element={<StatsPage />} />
+				<Route path="/add-film/:film_id" element={<AddFilmToWatchList />} />
+			</Routes>
+			<Navbar />
+		</main>
+	);
 }
 
 export default App;
