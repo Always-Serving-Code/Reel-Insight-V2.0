@@ -133,7 +133,51 @@ body {
   display: block;
 }
 
+/* Spinner in Loading */
 .spinnerContainer {
   text-align: center;
   margin-top: 70%;
+}
+
+/* Navbar */
+.icons {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  box-sizing: border-box;
+}
+
+.link {
+  font-size: 2rem;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+/* User account page */
+.container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.info {
+  margin: 20px;
+}
+
+.avatar {
+  max-width: 70px;
+  text-align: left;
+  padding: 10px;
+  margin-left: 10px;
+}
+
+.button {
+  margin-left: 300px;
 }
