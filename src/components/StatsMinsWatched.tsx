@@ -98,7 +98,8 @@ export default function StatsMinsWatched(props: StatsProps) {
       </div>
       <div>
         <p>
-          You've watched a total of {totalMinsWatched} minutes of film this year
+          You've watched a total of {totalMinsWatched} minutes of film this
+          year!
         </p>
       </div>
     </>

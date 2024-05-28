@@ -42,3 +42,9 @@ export interface YearObj {
 export interface GenreObj {
   genre?: string;
 }
+export interface DeleteProps{
+  film_id: string | number | undefined;
+  user_id: string | number | undefined;
+  setFilmsByUserId : any
+}
+

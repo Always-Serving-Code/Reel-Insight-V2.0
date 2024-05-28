@@ -9,6 +9,8 @@ import StatsTopDirectors from "./StatsTopDirectors";
 import StatsDecadePie from "./StatsDecadePie";
 import StatsGenrePie from "./StatsGenrePie";
 import Error from "./Error";
+import Loading from "./Loading";
+
 
 export default function StatsPage() {
   const [userData, setUserData] = useState<User | null>(null);
@@ -16,6 +18,7 @@ export default function StatsPage() {
   const [isError, setIsError] = useState(false);
 
   useEffect(() => {
+    setIsError(false);
     setIsLoading(true);
     getUserById(5)
       .then((user) => {
@@ -27,13 +30,11 @@ export default function StatsPage() {
       });
   }, []);
 
-  // TODO: improve Loading UI
-  if (isLoading) {
-    return <p>Loading...</p>;
-  }
+
 
   return isError ? (
-    <Error message="Oops something went wrong, try again later" />
+    <Error message="Oops something went wrong, try again later" /> ) : isLoading ? (
+    <Loading />
   ) : (
     <StatCardStyle>
       <StatsMinsWatched filmsWatched={userData.films} />
