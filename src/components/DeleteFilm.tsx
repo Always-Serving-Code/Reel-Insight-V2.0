@@ -19,20 +19,23 @@ export default function DeleteFilm({
   }
   function handleConfirmDelete() {
     setShowConfirmation(false);
+    deleteFilmByIdByUserId(Number(user_id), Number(film_id)).then(
+      (response) => {
+        console.log(response);
 
-    deleteFilmByIdByUserId(Number(user_id), Number(film_id)).then((response) => {
-      console.log(response);
-      filmsByUserId.forEach((film: Film, i: number) => {
-        if (film["_id"] === film_id) {
-          console.log(film);
-          setFilmsByUserId((current: any) => {
-            const newFilms = [...current];
-            newFilms.splice(i, 1);
-            return newFilms;
-          });
-        }
-      });
-    });
+        filmsByUserId.forEach((film: Film, i: number) => {
+          if (film["_id"] === film_id) {
+            console.log(film);
+            setFilmsByUserId((current: any) => {
+              const newFilms = [...current];
+              newFilms.splice(i, 1);
+              setUpdateFilms(!updateFilms);
+              return newFilms;
+            });
+          }
+        });
+      }
+    );
   }
   function handleCancelDelete() {
     setShowConfirmation(false);

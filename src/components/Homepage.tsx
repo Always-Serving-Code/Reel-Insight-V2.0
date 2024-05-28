@@ -4,8 +4,6 @@ import FilmSearch from "./FilmSearch";
 import { useEffect, useState } from "react";
 import { Film } from "../interfaces";
 import { getUserById } from "../utils/apiUtils";
-
-//import FilmHistoryPage from "./FilmHistoryPage";
 import Error from "./Error";
 import Loading from "./Loading";
 import FilmHistoryPage from "./FilmHistoryPage";
@@ -38,12 +36,10 @@ export default function Homepage() {
       <FilmSearch />
       <StatCardStyle>
         <StatsFilmsWatched filmsWatched={filmsWatched} />
-        <p>Last watched films:</p>
-        {/* <FilmHistoryPage /> */}
       </StatCardStyle>
       <FilmsSorter />
       <p>Recently watched films</p>
-      {/* <FilmHistoryPage /> */}
+      <FilmHistoryPage />
     </div>
   );
 }

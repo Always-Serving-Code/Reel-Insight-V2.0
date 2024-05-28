@@ -7,20 +7,22 @@ import Loading from "./Loading";
 import { FilmsContext } from "../contexts/Films";
 
 export default function FilmHistoryPage() {
+  const { updateFilms, setUpdateFilms } = useContext(FilmsContext);
   const [filmsByUserId, setFilmsByUserId] = useState<Film[]>([]);
   const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const user_id = 5;
 
   useEffect(() => {
-       setIsError(false); 
-    getFilmsByUserId(user_id).then((data) => {
-      setFilmsByUserId(data);
-      setIsLoading(false); 
-   }).catch((error) => {
-       setIsError(true);
-     });
-   }
+    setIsError(false);
+    getFilmsByUserId(user_id)
+      .then((data) => {
+        setFilmsByUserId(data);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        setIsError(true);
+      });
   }, [updateFilms]);
 
   return isError ? (
@@ -38,7 +40,7 @@ export default function FilmHistoryPage() {
               filmsByUserId={filmsByUserId}
               setFilmsByUserId={setFilmsByUserId}
             />
-             <img
+            <img
               src={film.poster_url}
               className="film-poster"
               alt={film.title}
@@ -50,5 +52,3 @@ export default function FilmHistoryPage() {
     </div>
   );
 }
-
-           

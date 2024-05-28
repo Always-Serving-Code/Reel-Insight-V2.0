@@ -1,7 +1,13 @@
-import { createContext, useState } from "react";
-export const FilmsContext = createContext();
+import { createContext, useState, ReactNode } from "react";
 
-export const FilmsProvider = ({ children }: any) => {
+interface FilmsContextType {
+  updateFilms: boolean;
+  setUpdateFilms: (value: boolean) => void;
+}
+
+export const FilmsContext = createContext<FilmsContextType | undefined>(undefined);
+
+export const FilmsProvider = ({ children }: { children: ReactNode }) => {
   const [updateFilms, setUpdateFilms] = useState(false);
   return (
     <FilmsContext.Provider value={{ updateFilms, setUpdateFilms }}>
