@@ -217,6 +217,18 @@ option {
   text-decoration: none;
 }
 
+.link-text {
+  @media (max-width: 700px) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+}
+
 /* User account page */
 .account-details-container {
   margin: 3rem;
