@@ -22,7 +22,7 @@ function App() {
 				<Route path="/stats" element={<StatsPage />} />
 				<Route path="/add-film/:film_id" element={<AddFilmToWatchList />} />
 			</Routes>
-			<Navbar />
+			{location.pathname !== "/" && <Navbar />}
 		</main>
 	);
 }
