@@ -1,22 +1,25 @@
 import { useEffect, useState } from "react";
-import { getFilmsByUserId } from "../utils/apiUtils";
+import { getFilmsByUserIdQuery } from "../utils/apiUtils";
 import { Film } from "../interfaces";
 import DeleteFilm from "./DeleteFilm";
 import Loading from "./Loading";
 import FilmsSorter from "./FilmsSorter";
 import FilmHistoryRating from "./FilmHistoryRating";
+import { useSearchParams } from "react-router-dom";
 
 export default function FilmHistoryPage() {
   const [filmsByUserId, setFilmsByUserId] = useState<Film[]>([]);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const sortQuery = searchParams.get("sort_by") ?? "date_watched";
   const [isLoading, setIsLoading] = useState(true);
   const user_id = 5;
 
   useEffect(() => {
-    getFilmsByUserId(user_id).then((data) => {
+    getFilmsByUserIdQuery(user_id, sortQuery).then((data) => {
       setFilmsByUserId(data);
       setIsLoading(false);
     });
-  }, []);
+  }, [sortQuery]);
 
   return isLoading ? (
     <Loading />
@@ -40,7 +43,7 @@ export default function FilmHistoryPage() {
                 alt={film.title}
               />
               <p className="film-title">{film.title}</p>
-              <FilmHistoryRating rating={film.rating!} />
+              <FilmHistoryRating key={film["_id"]} rating={film.rating!} />
             </li>
           ))}
         </ul>

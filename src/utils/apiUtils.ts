@@ -43,6 +43,22 @@ export const getFilmsByUserId = (user_id: number) => {
   });
 };
 
+export const getFilmsByUserIdQuery = (user_id: number, sortQuery: string) => {
+  if (sortQuery !== "title") {
+    return client
+      .get(`users/${user_id}/films?sort_by=${sortQuery}&order=desc`)
+      .then((response: Response) => {
+        return response["data"]["films"];
+      });
+  } else {
+    return client
+      .get(`users/${user_id}/films?sort_by=${sortQuery}&order=asc`)
+      .then((response: Response) => {
+        return response["data"]["films"];
+      });
+  }
+};
+
 export const deleteFilmByIdByUserId = (user_id: number, film_id: number) => {
   return client
     .delete(`users/${user_id}/${film_id}`)
