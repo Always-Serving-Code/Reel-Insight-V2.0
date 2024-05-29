@@ -12,7 +12,7 @@ body {
 }
 
 :root {
-  --serif: serif;
+  --serif: "Work Sans", serif;
   --sans-serif: "Work Sans", sans-serif;
 }
 
@@ -21,10 +21,12 @@ h1 {
   text-align: center;
   font-size: 1.7rem;
   margin: 1rem;
+  font-weight: 600;
 }
 
 h2 {
   font-family: var(--serif);
+  font-weight: 500;
 }
 
 h3 {

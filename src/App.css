@@ -19,6 +19,7 @@
   padding: 0.5rem;
   border-radius: 6px;
   font-family: var(--sans-serif);
+  margin: 0 0.5rem;
 }
 
 /* Authorization Form  */
@@ -249,6 +250,10 @@ option {
   font-weight: bold;
 }
 
+.italic {
+  font-style: italic;
+}
+
 .confirm-popup {
   position: fixed;
   z-index: 1000;
@@ -260,6 +265,7 @@ option {
   border: 1px solid black;
   border-radius: 5px;
 }
+
 .button-confirm-popup {
   border-radius: 10px;
   padding: 12px;
@@ -267,6 +273,7 @@ option {
   margin-right: 15px;
   margin-left: 15px;
 }
+
 .delete-button {
   position: absolute;
   top: 5px;
@@ -283,16 +290,20 @@ option {
 .rating-img {
   height: 40vh;
 }
-
+/* 
 .confirm-add {
   position: absolute;
   background-color: red;
   top: 50vh;
   margin: auto;
-}
+} */
 
 .star:active {
   -webkit-tap-highlight-color: transparent;
+}
+
+.added-text {
+  padding-bottom: 0.75rem;
 }
 
 /* stats */
@@ -330,23 +341,27 @@ option {
 /* Rating page */
 .rating-container {
   text-align: center;
+  padding: 2rem;
 }
 
 .rating-img {
-}
-
-.rating-title {
+  border-radius: 6px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
 }
 
 .rating-p {
+  padding-bottom: 1rem;
 }
 
 .rating-year {
   font-weight: bold;
+  padding-bottom: 1rem;
+}
+
+.star-rating {
+  margin-bottom: 1rem;
 }
 
 .rating-date {
-}
-
-.confirm-add {
+  margin-right: 1.5rem;
 }

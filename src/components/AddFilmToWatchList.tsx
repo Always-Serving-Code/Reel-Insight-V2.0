@@ -56,7 +56,9 @@ export default function AddFilmToWatchList() {
       <p className="rating-p">{currentFilm["synopsis"]}</p>
 
       <form onSubmit={handleSubmit}>
-        <StarRating rating={rating} setRating={setRating} />
+        <div className="star-rating">
+          <StarRating rating={rating} setRating={setRating} />
+        </div>
         {displayPleaseAddRating ? <p>Please rate before submitting!</p> : null}
         <label htmlFor="date-watched" />
         <input
@@ -69,8 +71,8 @@ export default function AddFilmToWatchList() {
         <button className="button">submit</button>
       </form>
       {displayAddedPopup && (
-        <div className="confirm-add">
-          <h2>{addingOrAdded}</h2>
+        <div className="confirm-popup ">
+          <h2 className="added-text">{addingOrAdded}</h2>
           {addingOrAdded === "Added!" && (
             <Link to="/home">
               <button className="button">Home</button>

@@ -23,7 +23,6 @@ export default function DeleteFilm({
 
         filmsByUserId.forEach((film: Film, i: number) => {
           if (film["_id"] === film_id) {
-            console.log(film);
             setFilmsByUserId((current: any) => {
               const newFilms = [...current];
               newFilms.splice(i, 1);
@@ -34,7 +33,7 @@ export default function DeleteFilm({
       }
     );
   }
-  
+
   function handleCancelDelete() {
     setShowConfirmation(false);
   }
@@ -46,14 +45,11 @@ export default function DeleteFilm({
       </button>
       {showConfirmation && (
         <div className="confirm-popup">
-          <h2>Delete this film?</h2>
-          <button
-            className="button-confirm-popup"
-            onClick={handleConfirmDelete}
-          >
+          <h2 className="added-text">Delete this film?</h2>
+          <button className="button" onClick={handleConfirmDelete}>
             Yes
           </button>
-          <button className="button-confirm-popup" onClick={handleCancelDelete}>
+          <button className="button" onClick={handleCancelDelete}>
             No
           </button>
         </div>

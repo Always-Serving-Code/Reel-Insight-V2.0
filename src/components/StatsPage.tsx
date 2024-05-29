@@ -35,7 +35,9 @@ export default function StatsPage() {
     <Loading />
   ) : (
     <>
-      <h1>Find your Statisfaction</h1>
+      <h1>
+        Find your <span className="italic">Statisfaction</span>
+      </h1>
       <StatCardStyle>
         <StatsFilmsWatched filmsWatched={userData.films} />
         <hr className="stat-divider" />
