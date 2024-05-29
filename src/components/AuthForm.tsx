@@ -73,7 +73,7 @@ export default function AuthForm() {
             type="button"
             onClick={() => setIsSignUp(false)}
           >
-            Already have an account? LogIn
+            Already have an account? Login
           </button>
         ) : (
           <button
@@ -81,7 +81,7 @@ export default function AuthForm() {
             type="button"
             onClick={() => setIsSignUp(true)}
           >
-            Don't have an account? SignUp
+            Don't have an account? Sign Up
           </button>
         )}
       </div>

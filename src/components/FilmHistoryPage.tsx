@@ -4,7 +4,7 @@ import { Film } from "../interfaces";
 import DeleteFilm from "./DeleteFilm";
 import Loading from "./Loading";
 import FilmsSorter from "./FilmsSorter";
-import StarRating from "./StarRating";
+import FilmHistoryRating from "./FilmHistoryRating";
 
 export default function FilmHistoryPage() {
   const [filmsByUserId, setFilmsByUserId] = useState<Film[]>([]);
@@ -14,7 +14,6 @@ export default function FilmHistoryPage() {
   useEffect(() => {
     getFilmsByUserId(user_id).then((data) => {
       setFilmsByUserId(data);
-      console.log(data);
       setIsLoading(false);
     });
   }, []);
@@ -41,6 +40,7 @@ export default function FilmHistoryPage() {
                 alt={film.title}
               />
               <p className="film-title">{film.title}</p>
+              <FilmHistoryRating rating={film.rating!} />
             </li>
           ))}
         </ul>
