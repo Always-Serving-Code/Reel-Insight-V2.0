@@ -1,8 +1,30 @@
-body {
-    background: #fff;
-    color: #000;
-    font: 13px/1.3 "Helvetica Neue", Helvetica, Arial, sans-serif;
-    padding-bottom: 40px;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  
+body {
+  background: #fff;
+  color: #000;
+  /* font: 13px/1.3 "sans-serif", Helvetica Neue, Helvetica, Arial; */
+  padding-bottom: 40px;
+}
+
+:root {
+  --serif: serif;
+  --sans-serif: "Work Sans", sans-serif;
+}
+
+h1 {
+  font-family: var(--serif);
+  text-align: center;
+}
+
+h2 {
+  font-family: var(--serif);
+}
+
+h3 {
+  font-family: var(--serif);
+}

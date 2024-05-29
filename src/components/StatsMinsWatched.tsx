@@ -42,11 +42,10 @@ export default function StatsMinsWatched(props: StatsProps) {
     responsive: true,
     plugins: {
       legend: {
-        position: "top" as const,
+        position: "bottom" as const,
       },
       title: {
         display: true,
-        text: "Number of minutes watched",
       },
     },
     maintainAspectRatio: true,
@@ -93,15 +92,17 @@ export default function StatsMinsWatched(props: StatsProps) {
 
   return filmsWatched.length ? (
     <>
+      <div className="stat-title">
+        <h2>Number of Minutes Watched</h2>
+      </div>
+      <p className="stat-line">
+        You've watched a total of {totalMinsWatched} minutes of film this year!
+      </p>
       <div className="chart-container">
         <Line options={options} data={data} />
+        <hr className="stat-divider" />
       </div>
-      <div>
-        <p>
-          You've watched a total of {totalMinsWatched} minutes of film this
-          year!
-        </p>
-      </div>
+      <div></div>
     </>
   ) : (
     <p>Loading...</p>

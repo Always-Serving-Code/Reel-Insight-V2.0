@@ -41,11 +41,10 @@ export default function StatsTopActors(props: StatsProps) {
     responsive: true,
     plugins: {
       legend: {
-        position: "right" as const,
+        position: "bottom" as const,
       },
       title: {
         display: true,
-        text: "Most Watched Actors",
       },
     },
   };
@@ -83,7 +82,11 @@ export default function StatsTopActors(props: StatsProps) {
 
   return (
     <div>
+      <div className="stat-title">
+        <h2>Most Watched Actors</h2>
+      </div>
       <Bar options={options} data={data} />
+      <hr className="stat-divider" />
     </div>
   );
 }

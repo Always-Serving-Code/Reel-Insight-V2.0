@@ -64,6 +64,14 @@ export default function StatsGenrePie(props: StatsProps) {
       ],
     };
 
-    return <Pie data={data} />;
+    return (
+      <div>
+        <div className="stat-title">
+          <h2>Top Genres</h2>
+        </div>
+        <Pie data={data} />
+        <hr className="stat-divider" />
+      </div>
+    );
   }
 }

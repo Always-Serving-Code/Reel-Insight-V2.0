@@ -75,6 +75,14 @@ export default function StatsDecadePie(props: StatsProps) {
       ],
     };
 
-    return <Pie data={data} />;
+    return (
+      <>
+        <div className="stat-title">
+          <h2>Favourite Decades</h2>
+        </div>
+        <Pie data={data} />
+        <hr className="stat-divider" />
+      </>
+    );
   }
 }

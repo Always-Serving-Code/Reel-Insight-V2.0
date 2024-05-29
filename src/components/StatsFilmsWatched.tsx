@@ -37,11 +37,10 @@ export default function StatsFilmsWatched(props: StatsProps) {
     responsive: true,
     plugins: {
       legend: {
-        position: "top" as const,
+        position: "bottom" as const,
       },
       title: {
         display: true,
-        text: "Films Watched",
       },
     },
     maintainAspectRatio: true,
@@ -88,6 +87,9 @@ export default function StatsFilmsWatched(props: StatsProps) {
 
   return filmsWatched.length ? (
     <div className="chart-container">
+      <div className="stat-title">
+        <h2>Number of Films Watched</h2>
+      </div>
       <Line options={options} data={data} />
     </div>
   ) : (
