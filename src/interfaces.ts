@@ -28,24 +28,21 @@ export interface WatchMonth {
   runtime?: number;
 }
 
-export interface ActorObj {
-  actor?: number;
-}
+export interface ActorObj {}
 
 export interface DirectorObj {
-  director?: number;
+  [key: string]: number;
 }
 
 export interface YearObj {
-  decade?: string;
+  [key: string]: number;
 }
 export interface GenreObj {
-  genre?: string;
+  [key: string]: number;
 }
-export interface DeleteProps{
+export interface DeleteProps {
   film_id: string | number | undefined;
   user_id: string | number | undefined;
-  setFilmsByUserId : any;
+  setFilmsByUserId: any;
   filmsByUserId: any;
 }
-
