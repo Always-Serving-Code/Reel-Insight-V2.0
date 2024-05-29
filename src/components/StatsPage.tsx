@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import StatsMinsWatched from "./StatsMinsWatched";
 import { getUserById } from "../utils/apiUtils";
 import { User } from "../interfaces";
@@ -10,13 +10,12 @@ import StatsDecadePie from "./StatsDecadePie";
 import StatsGenrePie from "./StatsGenrePie";
 import Error from "./Error";
 import Loading from "./Loading";
-import { FilmsContext } from "../contexts/Films";
+
 
 
 export default function StatsPage() {
   const [userData, setUserData] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const { updateFilms, setUpdateFilms } = useContext(FilmsContext);
   const [isError, setIsError] = useState(false);
 
 
@@ -29,7 +28,7 @@ export default function StatsPage() {
     }).catch((error) => {
         setIsError(true);
       });
-  }, [updateFilms]);
+  }, []);
 
   return isError ? (
     <Error message="Oops something went wrong, try again later" /> ) : isLoading ? (
