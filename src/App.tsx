@@ -7,27 +7,24 @@ import Homepage from "./components/Homepage";
 import FilmHistoryPage from "./components/FilmHistoryPage";
 import UserAccountPage from "./components/UserAccountPage";
 import StatsPage from "./components/StatsPage";
-import { UserProvider } from "./contexts/User";
-import { FilmsProvider } from "./contexts/Films";
+
+import AddFilmToWatchList from "./components/AddFilmToWatchList";
 
 function App() {
-  return (
-    <main>
-      <UserProvider>
-        <FilmsProvider>
-          <Header />
-          <Routes>
-            <Route path="/" element={<AuthForm />} />
-            <Route path="/home" element={<Homepage />} />
-            <Route path="/users/5/history" element={<FilmHistoryPage />} />
-            <Route path="/user" element={<UserAccountPage />} />
-            <Route path="/stats" element={<StatsPage />} />
-          </Routes>
-          <Navbar />
-        </FilmsProvider>
-      </UserProvider>
-    </main>
-  );
+	return (
+		<main>
+			<Header />
+			<Routes>
+				<Route path="/" element={<AuthForm />} />
+				<Route path="/home" element={<Homepage />} />
+        <Route path="/users/5/history" element={<FilmHistoryPage />} />
+				<Route path="/user" element={<UserAccountPage />} />
+				<Route path="/stats" element={<StatsPage />} />
+				<Route path="/add-film/:film_id" element={<AddFilmToWatchList />} />
+			</Routes>
+			<Navbar />
+		</main>
+	);
 }
 
 export default App;

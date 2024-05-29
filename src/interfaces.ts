@@ -6,6 +6,21 @@ export interface User {
   films: Film[];
 }
 export interface Film {
+	_id?: any;
+	title: string;
+	directors: string[];
+	genres: string[];
+	release_year: number;
+	poster_url: string;
+	synopsis: string;
+	lead_actors: string[];
+	runtime: number;
+	__v?: number;
+}
+
+export interface RatingProps {
+	rating: number;
+	setRating: (rating: number) => void;
   _id?: number | string;
   title: string;
   directors: string[];

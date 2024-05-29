@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const client = axios.create({
-  baseURL: "https://be-film-stat-app.onrender.com/api/",
+	baseURL: "https://be-film-stat-app.onrender.com/api/",
 });
 
 interface Response {
@@ -9,6 +9,23 @@ interface Response {
 }
 
 export const getFilms = () => {
+
+export const getFilmById = (film_id: string) => {
+	return client.get(`films/${film_id}`).then((response: Response) => {
+		return response["data"]["film"];
+	});
+};
+
+//hardcoded user for now ***need to update***
+
+export const postFilmToWatched = (
+	film_id: number,
+	dateWatched: string,
+	rating: number
+) => {
+	const date_watched = new Date(dateWatched);
+	return client.patch(`users/5`, { film_id, date_watched, rating });
+
   return client.get("films").then((response: Response) => {
     return response["data"]["films"];
   });

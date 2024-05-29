@@ -220,3 +220,20 @@ body {
   background-color: rgb(255, 255, 255, 0.6);
   padding: 5px;
 }
+
+/* rating page */
+
+.rating-img{
+  height: 40vh;
+}
+
+.confirm-add{
+  position: absolute;
+  background-color: red;
+  top:  50vh;
+  margin: auto;
+}
+
+.star:active{
+ -webkit-tap-highlight-color: transparent;
+}
