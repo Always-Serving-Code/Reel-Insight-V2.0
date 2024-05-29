@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router";
+import { useLocation } from 'react-router-dom';
 import "./App.css";
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
@@ -11,6 +12,7 @@ import StatsPage from "./components/StatsPage";
 import AddFilmToWatchList from "./components/AddFilmToWatchList";
 
 function App() {
+	const location = useLocation();
 	return (
 		<main>
 			<Header />
