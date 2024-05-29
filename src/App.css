@@ -13,6 +13,14 @@
   padding: 0.5rem;
 }
 
+.button {
+  background-color: black;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 6px;
+  font-family: var(--sans-serif);
+}
+
 /* Authorization Form  */
 .option {
   font-size: 30px;
@@ -65,14 +73,14 @@
 
 /* Film search bar */
 .searchbar-container {
-  margin: 15vh 0;
+  margin: 10vh 0;
 }
 
 .searchbar-title {
   font-family: var(--serif);
   font-size: 1.8rem;
-  padding-bottom: 1rem;
 }
+
 .film-search {
   position: absolute;
   width: 100%;
@@ -85,11 +93,16 @@
 .film-search-bar {
   width: 60%;
   margin: 0.5rem auto;
-  font-size: 1.5rem;
+  font-size: 1rem;
   padding: 0.5rem;
   border-radius: 6px;
   border-color: lightgray;
   font-family: var(--sans-serif);
+}
+
+.film-search-bar:focus {
+  border-color: #000000;
+  outline-style: none;
 }
 
 .film-search-results {
@@ -152,6 +165,21 @@
   display: block;
 }
 
+.dropdown-container {
+  margin-top: 1.5rem;
+  margin-left: 1.5rem;
+}
+
+.dropdown-sortby {
+  padding: 5px;
+  font-family: var(--sans-serif);
+  font-weight: 450;
+}
+
+.dropdown,
+option {
+  font-family: var(--sans-serif);
+}
 /* Spinner in Loading */
 .spinnerContainer {
   text-align: center;
@@ -188,27 +216,37 @@
 }
 
 /* User account page */
-.container {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  margin-top: 20px;
+.account-details-container {
+  margin: 3rem;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  padding: 2rem;
 }
 
-.info {
+.account-info {
   margin: 20px;
   font-family: var(--sans-serif);
 }
 
-.avatar {
-  max-width: 70px;
-  text-align: left;
+.account-avatar {
+  max-width: 100px;
   padding: 10px;
-  margin-left: 10px;
+  margin-left: 20px;
+  border-radius: 100%;
+  border: 1px solid black;
 }
 
-.button {
-  margin-left: 300px;
+.account-button {
+  text-align: center;
+}
+
+.user-info {
+  margin-bottom: 1rem;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 .confirm-popup {
@@ -281,5 +319,34 @@
 }
 /* Homepage */
 .homepage-graph {
-  margin-top: 2rem;
+  margin-top: 6rem;
+}
+
+.homepage-p {
+  text-align: center;
+  margin: 0.5rem 2rem;
+}
+
+/* Rating page */
+.rating-container {
+  text-align: center;
+}
+
+.rating-img {
+}
+
+.rating-title {
+}
+
+.rating-p {
+}
+
+.rating-year {
+  font-weight: bold;
+}
+
+.rating-date {
+}
+
+.confirm-add {
 }

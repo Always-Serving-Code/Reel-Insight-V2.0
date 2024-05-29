@@ -9,9 +9,9 @@ export default function FilmsSorter() {
   }
 
   return (
-    <>
+    <div className="dropdown-container">
       <label>
-        Sort by:
+        <span className="dropdown-sortby">Sort by:</span>
         <select className="dropdown" value={sortQuery} onChange={handleChange}>
           <option value="date_watched">Most recent</option>
           <option value="rating">Most popular</option>
@@ -20,6 +20,6 @@ export default function FilmsSorter() {
           <option value="runtime">Runtime</option>
         </select>
       </label>
-    </>
+    </div>
   );
 }

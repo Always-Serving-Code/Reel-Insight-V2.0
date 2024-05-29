@@ -8,12 +8,10 @@ import Loading from "./Loading";
 
 export default function Homepage() {
   const [filmsWatched, setFilmsWatched] = useState<Array<Film>>([]);
-  const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     setIsLoading(true);
-    setIsError(false);
     getUserById(5).then((user) => {
       setFilmsWatched(user.films);
       setIsLoading(false);

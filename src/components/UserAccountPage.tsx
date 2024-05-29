@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import avatar from "../assets/images/people.png";
+import avatar from "../assets/images/cat.avif";
 import { Link } from "react-router-dom";
 import { getUserById } from "../utils/apiUtils";
 import Loading from "./Loading";
@@ -23,16 +23,25 @@ export default function UserAccountPage() {
     <Loading />
   ) : (
     <section>
-      <div className="container">
-        <img className="avatar" src={avatar} alt="Avatar image" />
-        <section className="info">
-          <p>You're logged in, {userData.username} </p>
-          <p>Email address: {userData.email}</p>
+      <div className="account-details-container">
+        <img className="account-avatar" src={avatar} alt="Avatar image" />
+        <section className="account-info">
+          <p className="user-info">
+            <span className="bold">Username: </span>
+            {userData.username}{" "}
+          </p>
+          <p className="user-info">
+            <span className="bold">Email address: </span>
+            {userData.email}
+          </p>
         </section>
+
+        <div className="account-button">
+          <Link to={"/"}>
+            <button className="button">Log out</button>
+          </Link>
+        </div>
       </div>
-      <Link to={"/"}>
-        <button className="button">Log out</button>
-      </Link>
     </section>
   );
 }

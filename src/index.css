@@ -19,6 +19,8 @@ body {
 h1 {
   font-family: var(--serif);
   text-align: center;
+  font-size: 1.7rem;
+  margin: 1rem;
 }
 
 h2 {
@@ -27,4 +29,8 @@ h2 {
 
 h3 {
   font-family: var(--serif);
+}
+
+p {
+  font-family: var(--sans-serif);
 }

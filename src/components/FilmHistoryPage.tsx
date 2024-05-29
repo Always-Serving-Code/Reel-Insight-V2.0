@@ -4,6 +4,7 @@ import { Film } from "../interfaces";
 import DeleteFilm from "./DeleteFilm";
 import Loading from "./Loading";
 import FilmsSorter from "./FilmsSorter";
+import StarRating from "./StarRating";
 
 export default function FilmHistoryPage() {
   const [filmsByUserId, setFilmsByUserId] = useState<Film[]>([]);
@@ -22,6 +23,7 @@ export default function FilmHistoryPage() {
     <Loading />
   ) : (
     <div>
+      <h1>Watch History</h1>
       <FilmsSorter />
       <div className="film-history-page">
         <ul className="film-list">
@@ -38,7 +40,7 @@ export default function FilmHistoryPage() {
                 className="film-poster"
                 alt={film.title}
               />
-              <h2 className="film-title">{film.title}</h2>
+              <p className="film-title">{film.title}</p>
             </li>
           ))}
         </ul>

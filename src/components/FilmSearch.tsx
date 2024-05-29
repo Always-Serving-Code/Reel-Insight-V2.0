@@ -40,7 +40,9 @@ export default function FilmSearch() {
         <h1 className="searchbar-title">Add a New Film</h1>
         <form className="film-search" onSubmit={handleSubmit}>
           <label htmlFor="film-search" />
-          <p>Search for a film to rate and add to your watchlist</p>
+          <p className="homepage-p">
+            Search for a film to rate and add to your watchlist
+          </p>
           <input
             className="film-search-bar"
             value={currentSearch}
