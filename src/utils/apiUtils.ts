@@ -15,7 +15,7 @@ export const getFilms = () => {
 };
 
 export const getUserById = (user_id: number) => {
-  return axios
+  return client
     .get(`https://be-film-stat-app.onrender.com/api/users/${user_id}`)
     .then(({ data }) => {
       return data.user;
@@ -29,8 +29,9 @@ export const getFilmsByUserId = (user_id: number) => {
 };
 
 export const deleteFilmByIdByUserId = (user_id: number, film_id: number) => {
-	return client.delete(`users/${user_id}/${film_id}`).then((response: Response) => {
-    return response;
-  });
-  };
-  
+  return client
+    .delete(`users/${user_id}/${film_id}`)
+    .then((response: Response) => {
+      return response;
+    });
+};
