@@ -21,18 +21,7 @@ export interface Film {
 
 export interface RatingProps {
   rating: number;
-  setRating: (rating: number) => void;
-  _id?: number | string;
-  title: string;
-  directors: string[];
-  genres: string[];
-  release_year: number;
-  poster_url: string;
-  synopsis: string;
-  lead_actors: string[];
-  runtime: number;
-  __v?: number;
-  date_watched?: Date;
+  setRating?: (rating: number) => void;
 }
 
 export interface StatsProps {
