@@ -10,36 +10,30 @@ import FilmHistoryPage from "./FilmHistoryPage";
 import FilmsSorter from "./FilmsSorter";
 
 export default function Homepage() {
-  const [filmsWatched, setFilmsWatched] = useState<Array<Film>>([]);
-  const [isError, setIsError] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+	const [filmsWatched, setFilmsWatched] = useState<Array<Film>>([]);
+	const [isError, setIsError] = useState(false);
+	const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    setIsLoading(true);
-    setIsError(false);
-    getUserById(5)
-      .then((user) => {
-        setFilmsWatched(user.films);
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        setIsError(true);
-      });
-  }, []);
+	useEffect(() => {
+		setIsLoading(true);
+		setIsError(false);
+		getUserById(5).then((user) => {
+			setFilmsWatched(user.films);
+			setIsLoading(false);
+		});
+	}, []);
 
-  return isError ? (
-    <Error message="Oops something went wrong, try again later" />
-  ) : isLoading ? (
-    <Loading />
-  ) : (
-    <div>
-      <FilmSearch />
-      <StatCardStyle>
-        <StatsFilmsWatched filmsWatched={filmsWatched} />
-      </StatCardStyle>
-      <FilmsSorter />
-      <p>Recently watched films</p>
-      <FilmHistoryPage />
-    </div>
-  );
+	return isLoading ? (
+		<Loading />
+	) : (
+		<div>
+			<FilmSearch />
+			<StatCardStyle>
+				<StatsFilmsWatched filmsWatched={filmsWatched} />
+			</StatCardStyle>
+			<FilmsSorter />
+			<p>Recently watched films</p>
+			<FilmHistoryPage />
+		</div>
+	);
 }

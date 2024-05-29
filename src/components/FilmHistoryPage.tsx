@@ -1,33 +1,24 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { getFilmsByUserId } from "../utils/apiUtils";
 import { Film } from "../interfaces";
-import Error from "./Error";
 import DeleteFilm from "./DeleteFilm";
 import Loading from "./Loading";
-import { FilmsContext } from "../contexts/Films";
 
 export default function FilmHistoryPage() {
-  const { updateFilms, setUpdateFilms } = useContext(FilmsContext);
   const [filmsByUserId, setFilmsByUserId] = useState<Film[]>([]);
-  const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const user_id = 5;
 
   useEffect(() => {
-    setIsError(false);
     getFilmsByUserId(user_id)
       .then((data) => {
         setFilmsByUserId(data);
+        console.log(data)
         setIsLoading(false);
       })
-      .catch((error) => {
-        setIsError(true);
-      });
-  }, [updateFilms]);
+  }, []);
 
-  return isError ? (
-    <Error message="Oops something went wrong, try again later" />
-  ) : isLoading ? (
+  return isLoading ? (
     <Loading />
   ) : (
     <div className="film-history-page">
