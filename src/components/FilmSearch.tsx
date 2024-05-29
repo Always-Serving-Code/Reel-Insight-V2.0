@@ -36,7 +36,6 @@ export default function FilmSearch() {
 
 	return (
 		<section
-			// onBlur={() => setShowSuggestedFilms(false)}
 			onFocus={() => setShowSuggestedFilms(true)}
 		>
 			<form className="film-search" onSubmit={handleSubmit}>

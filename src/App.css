@@ -1,96 +1,93 @@
 * {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-	margin: 0;
+  margin: 0;
 }
 .header {
-	padding: 10px;
-	position: sticky;
-	top: 0;
-	z-index: 9999;
-	font-size: 20px;
-	border-bottom: 1px solid black;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  font-size: 20px;
+  border-bottom: 1px solid black;
+  background-color: #ffffff;
 }
 
 /* Authorization Form  */
 .option {
-	font-size: 30px;
+  font-size: 30px;
 }
 
 .log-in-form,
 .sign-up-form {
-	margin-top: 50%;
-	text-align: center;
+  margin-top: 35%;
+  text-align: center;
 }
 
 .user-info-label {
-	margin: 20px;
+  margin: 20px;
 }
 .user-info-label input {
-	border-top: 0;
-	border-left: 0;
-	border-right: 0;
-	font-size: 16px;
-	padding: 12px;
-	width: 90%;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  padding: 12px;
+  width: 90%;
 }
 .user-info-label input::placeholder {
-	color: #c2c2c2;
+  color: #c2c2c2;
 }
 
 .button-submit-auth {
-	border-radius: 10px;
-	font-size: 18px;
-	padding: 12px;
-	background-color: #ffffff;
+  border-radius: 10px;
+  padding: 12px;
+  background-color: #ffffff;
 }
 
 .button-auth-form {
-	border: 0;
-	background-color: #ffffff;
-	font-size: 16px;
-	padding: 8px;
-	margin-top: 10px;
+  border: 0;
+  background-color: #ffffff;
+  padding: 8px;
+  margin-top: 10px;
 }
 
 .extra-options {
-	margin: 20px;
+  margin: 20px;
 }
 .extra-options button {
-	border-radius: 10px;
-	font-size: 16px;
-	padding: 12px;
-	background-color: #ffffff;
+  border-radius: 10px;
+  padding: 12px;
+  background-color: #ffffff;
 }
 
 /* stats */
 .statCardStyle {
-	padding: 30px;
+  padding: 30px;
 }
 
 /* Film search bar */
 .film-search {
   position: absolute;
-	width: 100%;
-	margin: auto;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .film-search-bar {
-	width: 60%;
-	margin: auto;
+  width: 60%;
+  margin: auto;
 }
 
 .film-search-results {
-	list-style: none;
-	width: 60%;
-	max-height: 60vh;
-	overflow-y: scroll;
+  list-style: none;
+  width: 60%;
+  max-height: 60vh;
+  overflow-y: scroll;
   background: rgb(240, 240, 240);
 }
 
@@ -101,10 +98,127 @@ body {
 }
 
 .film-search-img {
-	height: 50px;
+  height: 50px;
   width: 32px;
   margin-right: 5px;
-  
+}
+/* Films History Page */
+.film-history-page {
+  padding: 20px;
+}
+
+.film-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.film-item {
+  position: relative;
+  width: 45%;
+  border-radius: 5px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.film-title {
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.film-poster {
+  width: 100%;
+  height: 70%;
+  display: block;
+}
+
+/* Spinner in Loading */
+.spinnerContainer {
+  text-align: center;
+  margin-top: 70%;
+}
+
+/* Navbar */
+.nav-bar {
+  padding: 5px 40px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  border-top: 1px solid black;
+  background-color: #ffffff;
+  position: fixed;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-link {
+  font-size: 2rem;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  color: black;
+  text-decoration: none;
+}
+
+/* User account page */
+.container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.info {
+  margin: 20px;
+}
+
+.avatar {
+  max-width: 70px;
+  text-align: left;
+  padding: 10px;
+  margin-left: 10px;
+}
+
+.button {
+  margin-left: 300px;
+}
+
+.confirm-popup {
+  position: fixed;
+  z-index: 1000;
+  background-color: rgb(255, 255, 255, 0.9);
+  top: 40vh;
+  right: 10%;
+  left: 10%;
+  padding: 60px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.button-confirm-popup {
+  border-radius: 10px;
+  padding: 12px;
+  background-color: #ffffff;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+.delete-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 1;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255, 0.6);
+  padding: 5px;
 }
 
 /* rating page */

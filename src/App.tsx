@@ -7,6 +7,7 @@ import Homepage from "./components/Homepage";
 import FilmHistoryPage from "./components/FilmHistoryPage";
 import UserAccountPage from "./components/UserAccountPage";
 import StatsPage from "./components/StatsPage";
+
 import AddFilmToWatchList from "./components/AddFilmToWatchList";
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
 			<Routes>
 				<Route path="/" element={<AuthForm />} />
 				<Route path="/home" element={<Homepage />} />
-				<Route path="/history" element={<FilmHistoryPage />} />
+        <Route path="/users/5/history" element={<FilmHistoryPage />} />
 				<Route path="/user" element={<UserAccountPage />} />
 				<Route path="/stats" element={<StatsPage />} />
 				<Route path="/add-film/:film_id" element={<AddFilmToWatchList />} />

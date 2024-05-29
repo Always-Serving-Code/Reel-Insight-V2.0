@@ -3,23 +3,24 @@ import { PiFilmReelFill } from "react-icons/pi";
 import { VscGraphLine } from "react-icons/vsc";
 import { FaRegUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import styles from "../css modules/Navbar.module.css";
 
 export default function Navbar() {
   return (
-    <nav className={styles.icons}>
-      <Link to="/home">
-        <MdHome className={styles.home} />
+    <div className="nav-bar">
+    <nav className="icons">
+      <Link to="/home" className="nav-link" >
+        <MdHome />
       </Link>
-      <Link to="/history">
-        <PiFilmReelFill className={styles.film} />
+      <Link to="/users/5/history" className="nav-link">
+        <PiFilmReelFill />
       </Link>
-      <Link to="/stats">
-        <VscGraphLine className={styles.graph} />
+      <Link to="/stats" className="nav-link">
+        <VscGraphLine />
       </Link>
-      <Link to="/user">
-        <FaRegUserCircle className={styles.user} />
+      <Link to="/user" className="nav-link">
+        <FaRegUserCircle />
       </Link>
     </nav>
+    </div>
   );
 }
