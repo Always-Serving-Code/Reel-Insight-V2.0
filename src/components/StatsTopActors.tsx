@@ -35,6 +35,7 @@ export default function StatsTopActors(props: StatsProps) {
 		Legend
 	);
 	const options = {
+		aspectRatio: 1,
 		indexAxis: "y" as const,
 		elements: {
 			bar: {
@@ -65,12 +66,12 @@ export default function StatsTopActors(props: StatsProps) {
 	};
 
   return (
-    <div>
-      <div className="stat-title">
-        <h2>Most Watched Actors</h2>
-      </div>
-      <Bar options={options} data={data} />
-      <hr className="stat-divider" />
-    </div>
-  );
+		<div>
+			<div className="stat-title">
+				<h2>Most Watched Actors</h2>
+			</div>
+			<Bar options={options} data={data}/>
+			<hr className="stat-divider" />
+		</div>
+	);
 }
