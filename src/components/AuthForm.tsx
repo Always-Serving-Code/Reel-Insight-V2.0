@@ -1,9 +1,5 @@
 import { FormEvent, useState } from "react";
 import { Link } from "react-router-dom";
-import { FaGoogle } from "react-icons/fa";
-import { ImFacebook2 } from "react-icons/im";
-
-
 
 export default function AuthForm() {
   const [isSignUp, setIsSignUp] = useState(false);
@@ -84,14 +80,6 @@ export default function AuthForm() {
             Don't have an account? Sign Up
           </button>
         )}
-      </div>
-      <div className="extra-options">
-        <button type="button"
-        ><FaGoogle /> Login with Google </button>
-      </div>
-      <div className="extra-options">
-        <button type="button"
-        ><ImFacebook2 /> Login with Facebook</button>
       </div>
     </form>
   );
