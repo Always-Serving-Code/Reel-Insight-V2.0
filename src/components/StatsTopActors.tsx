@@ -1,84 +1,68 @@
-import { ActorObj } from "../interfaces";
+import { ActorObj, ChartData } from "../interfaces";
 import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
+	Chart as ChartJS,
+	CategoryScale,
+	LinearScale,
+	BarElement,
+	Title,
+	Tooltip,
+	Legend,
 } from "chart.js";
 import "../App.css";
 import { Bar } from "react-chartjs-2";
 import { StatsProps } from "../interfaces";
+import { topData as topData } from "../utils/utils";
 
 export default function StatsTopActors(props: StatsProps) {
-  const { filmsWatched } = props;
-  const actors: string[] = [];
-  if (filmsWatched.length) {
-    filmsWatched.forEach((film) => {
-      film["lead_actors"].forEach((actor: string) => {
-        actors.push(actor);
-      });
-    });
-  }
+	const { filmsWatched } = props;
+	const actors: string[] = [];
+	if (filmsWatched.length) {
+		filmsWatched.forEach((film) => {
+			film["lead_actors"].forEach((actor: string) => {
+				actors.push(actor);
+			});
+		});
+	}
+  
+	const chartData: ChartData = topData(actors, 5);
 
-  ChartJS.register(
-    CategoryScale,
-    LinearScale,
-    BarElement,
-    Title,
-    Tooltip,
-    Legend
-  );
-  const options = {
-    indexAxis: "y" as const,
-    elements: {
-      bar: {
-        borderWidth: 2,
-      },
-    },
-    responsive: true,
-    plugins: {
-      legend: {
-        position: "bottom" as const,
-      },
-      title: {
-        display: true,
-      },
-    },
-  };
+	ChartJS.register(
+		CategoryScale,
+		LinearScale,
+		BarElement,
+		Title,
+		Tooltip,
+		Legend
+	);
+	const options = {
+		indexAxis: "y" as const,
+		elements: {
+			bar: {
+				borderWidth: 2,
+			},
+		},
+		responsive: true,
+		plugins: {
+			legend: {
+				position: "bottom" as const,
+			},
+			title: {
+				display: true,
+			},
+		},
+	};
 
-  const filteredActors = actors.filter(
-    (value, index) => actors.indexOf(value) === index
-  );
-
-  const actorObj: ActorObj = {};
-  actors.forEach((actor) => {
-    if (actor in actorObj) {
-      actorObj[actor] = actorObj[actor] + 1;
-    } else {
-      actorObj[actor] = 1;
-    }
-  });
-
-  const dataArr: Array<number> = [];
-  for (const actorData in actorObj) {
-    dataArr.push(actorObj[actorData]);
-  }
-
-  const labels = filteredActors;
-  const data = {
-    labels,
-    datasets: [
-      {
-        label: "Number of Films",
-        data: dataArr,
+	const data = {
+		labels: chartData["labels"],
+		datasets: [
+			{
+				label: "Number of Films",
+				data: chartData["values"],
         borderColor: "#de9f4f",
         backgroundColor: "#de9f4f",
-      },
-    ],
-  };
+			},
+		],
+	};
 
   return (
     <div>
