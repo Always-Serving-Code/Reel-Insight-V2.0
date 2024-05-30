@@ -83,7 +83,6 @@
 }
 
 .film-search {
- 
   width: 100%;
   margin: auto;
   display: flex;
@@ -113,6 +112,7 @@
   overflow-y: scroll;
   background: white;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+  margin-top: 100px;
 }
 
 .film-search-card {
@@ -136,7 +136,7 @@
 }
 /* Films History Page */
 .film-history-page {
-  padding: 20px;
+  padding: 5px;
 }
 
 .film-list {
@@ -148,7 +148,7 @@
 
 .film-item {
   position: relative;
-  width: 40%;
+  width: 45%;
   border-radius: 5px;
   overflow: hidden;
   text-align: center;
@@ -169,6 +169,7 @@
 .dropdown-container {
   margin-top: 1.5rem;
   margin-left: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .dropdown-sortby {
