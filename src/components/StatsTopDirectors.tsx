@@ -35,6 +35,7 @@ export default function StatsTopDirectors(props: StatsProps) {
 		Legend
 	);
 	const options = {
+		aspectRatio: 1,
 		indexAxis: "y" as const,
 		elements: {
 			bar: {
