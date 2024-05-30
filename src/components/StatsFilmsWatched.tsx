@@ -79,8 +79,8 @@ export default function StatsFilmsWatched(props: StatsProps) {
       {
         label: "Films Watched",
         data: filmData,
-        borderColor: "rgb(255, 99, 132)",
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
+        borderColor: "#b44c54",
+        backgroundColor: "#b44c54",
       },
     ],
   };

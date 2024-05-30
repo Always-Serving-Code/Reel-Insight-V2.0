@@ -84,8 +84,8 @@ export default function StatsMinsWatched(props: StatsProps) {
       {
         label: "Number of minutes watched",
         data: minsData,
-        borderColor: "rgb(255, 99, 132)",
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
+        borderColor: "#714b5c",
+        backgroundColor: "#714b5c",
       },
     ],
   };
