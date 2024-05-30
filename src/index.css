@@ -36,3 +36,81 @@ h3 {
 p {
   font-family: var(--sans-serif);
 }
+
+@media (min-width: 601px) {
+  .sign-up-form,
+  .log-in-form {
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 10%;
+    zoom: 0.6;
+  }
+  .header,
+  .nav-bar {
+    zoom: 0.7;
+    width: 1200px;
+    margin: 0 auto;
+    }
+  .icons {
+    width: 1000px;
+    margin: 0 auto;
+    zoom: 0.8;
+  }
+  .searchbar-container,
+  .film-search,
+  .dropdown-container {
+    width: 500px;
+    margin: 0 auto;
+    zoom: 0.7;
+    margin-top: 2%;
+  }
+  .searchbar-container {
+    margin-bottom: -70px;
+  }
+  .film-search-results {
+    margin-top: 3.5rem;
+    max-height: 100vh;
+    width: 25%;
+    zoom: 1.4;
+  }
+
+  .film-item {
+    width: 20%;
+  }
+  .film-history-page {
+    width: 650px;
+    margin: 0 auto;
+    zoom: 0.85;
+  }
+  .film-title {
+    font-size: 10px;
+  }
+
+  .account-details-container {
+    zoom: 0.6;
+  }
+
+  .statCardStyle {
+    width: 500px;
+    margin: 0 auto;
+    zoom: 0.6;
+  }
+}
+@media (min-width: 301px) and (max-width: 600px) {
+  .sign-up-form,
+  .log-in-form {
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 10%;
+    zoom:0.9;
+  }
+
+  @media (max-width: 300px) {
+    .sign-up-form,
+    .log-in-form {
+      width: 100px;
+      margin: 0 auto;
+      margin-top: 10%;
+    }
+  }
+}
