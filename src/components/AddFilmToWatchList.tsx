@@ -69,7 +69,7 @@ export default function AddFilmToWatchList() {
         <button className="button">submit</button>
       </form>
       {displayAddedPopup && (
-        <div className="confirm-add">
+        <div className="confirm-popup">
           <h2>{addingOrAdded}</h2>
           {addingOrAdded === "Added!" && (
             <Link to="/home">
