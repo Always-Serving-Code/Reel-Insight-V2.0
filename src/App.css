@@ -136,7 +136,7 @@
 }
 /* Films History Page */
 .film-history-page {
-  padding: 5px;
+  padding: 20px;
 }
 
 .film-list {
@@ -156,13 +156,14 @@
 }
 
 .film-title {
+  margin: 10px 0;
   padding: 0 0.2rem;
   font-size: 14px;
 }
 
 .film-poster {
   width: 100%;
-  height: 75%;
+  height: 70%;
   display: block;
 }
 
