@@ -58,19 +58,19 @@ export default function StatsTopDirectors(props: StatsProps) {
 			{
 				label: "Number of Films",
 				data: chartData["values"],
-				borderColor: "rgb(255, 99, 132)",
-				backgroundColor: "rgba(255, 99, 132, 0.5)",
+        borderColor: "#a75d3a",
+        backgroundColor: "#a75d3a",
 			},
 		],
 	};
 
-	return (
-		<div>
-			<div className="stat-title">
-				<h2>Most Watched Directors</h2>
-			</div>
-			<Bar options={options} data={data} />
-			<hr className="stat-divider" />
-		</div>
-	);
+  return (
+    <div>
+      <div className="stat-title">
+        <h2>Most Watched Directors</h2>
+      </div>
+      <Bar options={options} data={data} />
+      <hr className="stat-divider" />
+    </div>
+  );
 }

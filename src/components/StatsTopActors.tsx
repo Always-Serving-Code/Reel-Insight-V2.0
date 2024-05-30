@@ -23,6 +23,8 @@ export default function StatsTopActors(props: StatsProps) {
 			});
 		});
 	}
+  
+	const chartData: ChartData = topData(actors, 5);
 
 	ChartJS.register(
 		CategoryScale,
@@ -50,27 +52,25 @@ export default function StatsTopActors(props: StatsProps) {
 		},
 	};
 
-	const chartData: ChartData = topData(actors, 5);
-
 	const data = {
 		labels: chartData["labels"],
 		datasets: [
 			{
 				label: "Number of Films",
 				data: chartData["values"],
-				borderColor: "rgb(255, 99, 132)",
-				backgroundColor: "rgba(255, 99, 132, 0.5)",
+        borderColor: "#de9f4f",
+        backgroundColor: "#de9f4f",
 			},
 		],
 	};
 
-	return (
-		<div>
-			<div className="stat-title">
-				<h2>Most Watched Actors</h2>
-			</div>
-			<Bar options={options} data={data} />
-			<hr className="stat-divider" />
-		</div>
-	);
+  return (
+    <div>
+      <div className="stat-title">
+        <h2>Most Watched Actors</h2>
+      </div>
+      <Bar options={options} data={data} />
+      <hr className="stat-divider" />
+    </div>
+  );
 }

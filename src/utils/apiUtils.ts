@@ -43,6 +43,17 @@ export const getFilmsByUserId = (user_id: number) => {
   });
 };
 
+export const getFilmsByUserIdQuery = (user_id: number, sortQuery: string) => {
+  return client
+    .get(`users/${user_id}/films`, {
+      params: {
+        sort_by: sortQuery,
+        order: sortQuery === "title" ? "asc" : "desc",
+      },
+    })
+    .then((response: Response) => response.data.films);
+};
+
 export const deleteFilmByIdByUserId = (user_id: number, film_id: number) => {
   return client
     .delete(`users/${user_id}/${film_id}`)

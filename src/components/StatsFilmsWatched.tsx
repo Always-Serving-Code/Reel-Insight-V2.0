@@ -16,6 +16,13 @@ import { StatsProps, Film } from "../interfaces";
 export default function StatsFilmsWatched(props: StatsProps) {
   const { filmsWatched } = props;
 
+  let numOfFilmsWatched = "";
+  if (filmsWatched.length <= 1) {
+    numOfFilmsWatched = filmsWatched.length + " film";
+  } else {
+    numOfFilmsWatched = filmsWatched.length + " films";
+  }
+
   const monthArr: Array<string> = [];
   if (filmsWatched.length) {
     filmsWatched.forEach((film: Film) => {
@@ -79,8 +86,8 @@ export default function StatsFilmsWatched(props: StatsProps) {
       {
         label: "Films Watched",
         data: filmData,
-        borderColor: "rgb(255, 99, 132)",
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
+        borderColor: "#b44c54",
+        backgroundColor: "#b44c54",
       },
     ],
   };
@@ -90,6 +97,9 @@ export default function StatsFilmsWatched(props: StatsProps) {
       <div className="stat-title">
         <h2>Number of Films Watched</h2>
       </div>
+      <p className="stat-line">
+        You've watched a total of {numOfFilmsWatched} this year!
+      </p>
       <Line options={options} data={data} />
     </div>
   ) : (
