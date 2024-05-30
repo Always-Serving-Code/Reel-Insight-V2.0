@@ -1,5 +1,5 @@
 .header {
-  height: 45px;
+  height: 55px;
   position: sticky;
   top: 0;
   z-index: 9999;
@@ -190,7 +190,7 @@ option {
 
 /* Navbar */
 .nav-bar {
-  height: 45px;
+  height: 55px;
   bottom: 0;
   left: 0;
   right: 0;
@@ -205,7 +205,7 @@ option {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 0.5rem 2rem;
+  padding: 0.7rem 2rem;
 }
 
 .nav-link {
