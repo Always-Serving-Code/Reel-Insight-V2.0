@@ -2,7 +2,7 @@ import { RatingProps } from "../interfaces";
 
 export default function StarRating({ rating, setRating }: RatingProps) {
 	return (
-		<div>
+		<div className="star-rating">
 			{[1, 2, 3, 4, 5].map((star) => {
 				return (
 					<span
