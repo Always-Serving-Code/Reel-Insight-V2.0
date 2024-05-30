@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import { deleteFilmByIdByUserId } from "../utils/apiUtils";
 import { DeleteProps } from "../interfaces";

@@ -9,7 +9,7 @@ import { useSearchParams } from "react-router-dom";
 
 export default function FilmHistoryPage() {
   const [filmsByUserId, setFilmsByUserId] = useState<Film[]>([]);
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
   const sortQuery = searchParams.get("sort_by") ?? "date_watched";
   const [isLoading, setIsLoading] = useState(true);
   const user_id = 5;

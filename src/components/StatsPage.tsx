@@ -24,7 +24,7 @@ export default function StatsPage() {
         setUserData(user);
         setIsLoading(false);
       })
-      .catch((error) => {
+      .catch(() => {
         setIsError(true);
       });
   }, []);
