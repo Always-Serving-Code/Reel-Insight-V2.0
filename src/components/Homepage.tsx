@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { Film } from "../interfaces";
 import { getUserById } from "../utils/apiUtils";
 import Loading from "./Loading";
+import StatFacts from "./StatFacts";
 
 export default function Homepage() {
   const [filmsWatched, setFilmsWatched] = useState<Array<Film>>([]);
@@ -23,11 +24,14 @@ export default function Homepage() {
   ) : (
     <div>
       <FilmSearch />
-      <StatCardStyle>
-        <div className="homepage-graph">
-          <StatsFilmsWatched filmsWatched={filmsWatched} />
-        </div>
-      </StatCardStyle>
+      {/* <StatFacts filmsWatched={filmsWatched} /> */}
+      <div className="statCard-container">
+        <StatCardStyle>
+          <div className="homepage-graph">
+            <StatsFilmsWatched filmsWatched={filmsWatched} />
+          </div>
+        </StatCardStyle>
+      </div>
     </div>
   );
 }
