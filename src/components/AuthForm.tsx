@@ -20,7 +20,7 @@ export default function AuthForm() {
       className={isSignUp ? "sign-up-form" : "log-in-form"}
       onSubmit={handleSubmit}
     >
-      <div className="option">{isSignUp ? "SignUp" : "LogIn"}</div>
+      <div className="option">{isSignUp ? "Sign Up" : "Login"}</div>
       <div className="user-info-label">
         <label>
           <input

@@ -19,6 +19,11 @@ export interface Film {
   rating?: number;
 }
 
+export interface ChartData {
+  labels: string[];
+  values: number[];
+}
+
 export interface RatingProps {
   rating: number;
   setRating?: (rating: number) => void;
