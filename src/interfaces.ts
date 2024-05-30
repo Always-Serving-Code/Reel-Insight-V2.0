@@ -16,6 +16,7 @@ export interface Film {
   lead_actors: string[];
   runtime: number;
   __v?: number;
+  date_watched?: string;
   rating?: number;
 }
 
@@ -57,4 +58,18 @@ export interface DeleteProps {
   user_id: string | number | undefined;
   setFilmsByUserId: any;
   filmsByUserId: any;
+}
+
+export interface FilmState {
+	_id?: any;
+	title?: string;
+	directors?: string[];
+	genres?: string[];
+	release_year?: number;
+	poster_url?: string;
+	synopsis?: string;
+	lead_actors?: string[];
+	runtime?: number;
+	__v?: number;
+	rating?: number;
 }

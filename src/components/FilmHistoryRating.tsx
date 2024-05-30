@@ -1,7 +1,6 @@
 import { RatingProps } from "../interfaces";
 
 export default function FilmHistoryRating({ rating }: RatingProps) {
-  console.log('rating here!!!')
   return (
     <div>
       {[1, 2, 3, 4, 5].map((star) => {

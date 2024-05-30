@@ -1,4 +1,4 @@
-import { ActorObj, ChartData } from "../interfaces";
+import { ChartData } from "../interfaces";
 import {
 	Chart as ChartJS,
 	CategoryScale,

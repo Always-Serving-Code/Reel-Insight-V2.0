@@ -1,4 +1,4 @@
-import { StatsProps, watchMonth } from "../interfaces";
+import { StatsProps, WatchMonth } from "../interfaces";
 import { Line } from "react-chartjs-2";
 import moment from "moment";
 import {
@@ -29,7 +29,7 @@ export default function StatsMinsWatched(props: StatsProps) {
     const monthArr: Array<object> = [];
     if (filmsWatched.length) {
       filmsWatched.forEach((film) => {
-        const date = film.date_watched;
+        const date = film["date_watched"];
         const month = moment(date, "YYYY-MM-DDTHH:mm:ss.SSS[Z]").format("MMMM");
         monthArr.push({ month: month, runtime: film.runtime });
       });
@@ -76,9 +76,9 @@ export default function StatsMinsWatched(props: StatsProps) {
     const minsData: number[] = [];
     labels.forEach((month: string) => {
       let count = 0;
-      monthArr.forEach((watchMonth: watchMonth) => {
+      monthArr.forEach((watchMonth: WatchMonth) => {
         if (month === watchMonth.month) {
-          count += watchMonth.runtime;
+          count += watchMonth.runtime!;
         }
       });
       minsData.push(count);

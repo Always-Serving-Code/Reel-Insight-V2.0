@@ -17,8 +17,6 @@ export default function StatsGenrePie(props: StatsProps) {
       (value, index) => genreArr.indexOf(value) === index
     );
 
-    console.log(filteredGenres);
-
     const uppercaseGenres = filteredGenres.map(
       (genre) => genre[0].toUpperCase() + genre.slice(1)
     );
