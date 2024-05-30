@@ -42,8 +42,8 @@ export default function FilmHistoryPage() {
                 className="film-poster"
                 alt={film.title}
               />
-              <p className="film-title">{film.title}</p>
               <FilmHistoryRating key={film["_id"]} rating={film.rating!} />
+              <p className="film-title">{film.title}</p>
             </li>
           ))}
         </ul>

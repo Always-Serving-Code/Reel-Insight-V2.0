@@ -6,6 +6,7 @@ export default function FilmHistoryRating({ rating }: RatingProps) {
       {[1, 2, 3, 4, 5].map((star) => {
         return (
           <span
+          key={star}
             className="watched-star"
             style={{
               cursor: "pointer",
