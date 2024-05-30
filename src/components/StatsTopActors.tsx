@@ -74,8 +74,8 @@ export default function StatsTopActors(props: StatsProps) {
       {
         label: "Number of Films",
         data: dataArr,
-        borderColor: "rgb(255, 99, 132)",
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
+        borderColor: "#de9f4f",
+        backgroundColor: "#de9f4f",
       },
     ],
   };

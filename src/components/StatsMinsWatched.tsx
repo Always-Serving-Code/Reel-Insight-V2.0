@@ -84,17 +84,17 @@ export default function StatsMinsWatched(props: StatsProps) {
       minsData.push(count);
     });
 
-    const data = {
-      labels,
-      datasets: [
-        {
-          label: "Number of minutes watched",
-          data: minsData,
-          borderColor: "rgb(255, 99, 132)",
-          backgroundColor: "rgba(255, 99, 132, 0.5)",
-        },
-      ],
-    };
+  const data = {
+    labels,
+    datasets: [
+      {
+        label: "Number of minutes watched",
+        data: minsData,
+        borderColor: "#714b5c",
+        backgroundColor: "#714b5c",
+      },
+    ],
+  };
 
     return filmsWatched.length ? (
       <>

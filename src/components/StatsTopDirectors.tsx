@@ -73,8 +73,8 @@ export default function StatsTopDirectors(props: StatsProps) {
       {
         label: "Number of Films",
         data: dataArr,
-        borderColor: "rgb(255, 99, 132)",
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
+        borderColor: "#a75d3a",
+        backgroundColor: "#a75d3a",
       },
     ],
   };
