@@ -1,30 +1,12 @@
-# React + TypeScript + Vite
+** Reel Insight **
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Reel insight is a personalised statistics based service that allows users to update recently watched films to discover stats about themselves based upon viewing habits.
+The site is designed as a mobile first site, with functionality to view on a web browser.
+Users have the option to log in, view their film history, and view a range of stats that are dynamically updated each time they add a new film.
+Users also have the option to remove films they have added by accident (or no longer wish to render), this in turn updates the users stats page.
 
-Currently, two official plugins are available:
+The website is hosted at https://reel-insight.netlify.app/home (
+Please note the website may take around 30-60 seconds to load if the server hasn't been contacted in while - we would reccommend viewing on a mobile for the best experience)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+This project was built using React, with Typescript and hosted on Netlify.
+The project is run on a backend server we have created previously using MongoDB. The repository for this server can be found here https://github.com/Always-Serving-Code/be-film-stat-app
