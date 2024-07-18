@@ -5,7 +5,7 @@ The site is designed as a mobile first site, with functionality to view on a web
 Users have the option to log in, view their film history, and view a range of stats that are dynamically updated each time they add a new film.
 Users also have the option to remove films they have added by accident (or no longer wish to render), this in turn updates the users stats page.
 
-The website is hosted at https://reel-insight.netlify.app/home (
+The website is hosted at https://reel-insight.netlify.app, and a test profile has been pre filled for demo purposes. (
 Please note the website may take around 30-60 seconds to load if the server hasn't been contacted in while - we would reccommend viewing on a mobile for the best experience)
 
 This project was built using React, with Typescript and hosted on Netlify.
