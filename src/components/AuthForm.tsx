@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 export default function AuthForm() {
   const [isSignUp, setIsSignUp] = useState(false);
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("PumpkinHead");
+  const [password, setPassword] = useState("iLovePumpkins98");
   const [email, setEmail] = useState("");
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -23,6 +23,7 @@ export default function AuthForm() {
             type="text"
             name="username"
             placeholder="Username"
+            value="PumpkinHead"
             onChange={(e) => setUsername(e.target.value)}
           />
         </label>
@@ -33,6 +34,7 @@ export default function AuthForm() {
             type="password"
             name="password"
             placeholder="Password"
+            value="iLovePumpkins98"
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
