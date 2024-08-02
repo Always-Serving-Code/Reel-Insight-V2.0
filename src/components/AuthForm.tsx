@@ -79,7 +79,7 @@ export default function AuthForm() {
             type="button"
             onClick={() => setIsSignUp(true)}
           >
-            Don't have an account? Sign Up
+            Don't have an account? Sign Up.
           </button>
         )}
       </div>
