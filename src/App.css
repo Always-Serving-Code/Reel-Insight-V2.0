@@ -19,6 +19,7 @@
   border-radius: 6px;
   font-family: var(--sans-serif);
   margin: 0 0.5rem;
+  cursor: pointer;
 }
 
 /* Authorization Form  */
@@ -52,13 +53,22 @@
   border-radius: 10px;
   padding: 12px;
   background-color: #ffffff;
+  cursor: pointer;
 }
 
+.signed-up-logged-in-text {
+  padding-top: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+}
 .button-auth-form {
   border: 0;
   background-color: #ffffff;
   padding: 8px;
   margin-top: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .extra-options {
@@ -297,6 +307,7 @@ option {
   border-radius: 5px;
   background-color: rgb(255, 255, 255, 0.6);
   padding: 5px;
+  cursor: pointer;
 }
 
 /* rating page */
