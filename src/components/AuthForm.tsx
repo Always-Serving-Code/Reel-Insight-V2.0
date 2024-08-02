@@ -66,21 +66,29 @@ export default function AuthForm() {
 
       <div>
         {isSignUp ? (
-          <button
-            className="button-auth-form"
-            type="button"
-            onClick={() => setIsSignUp(false)}
-          >
-            Already have an account? Login
-          </button>
+          <>
+            <p className="signed-up-logged-in-text">
+              Already have an account?{" "}
+            </p>
+            <button
+              className="button-auth-form"
+              type="button"
+              onClick={() => setIsSignUp(false)}
+            >
+              Log in
+            </button>
+          </>
         ) : (
-          <button
-            className="button-auth-form"
-            type="button"
-            onClick={() => setIsSignUp(true)}
-          >
-            Don't have an account? Sign Up..... test
-          </button>
+          <>
+            <p className="signed-up-logged-in-text">Don't have an account? </p>
+            <button
+              className="button-auth-form"
+              type="button"
+              onClick={() => setIsSignUp(true)}
+            >
+              Sign Up
+            </button>
+          </>
         )}
       </div>
     </form>
