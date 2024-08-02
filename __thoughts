@@ -1,3 +1,4 @@
 - paths - do we want to make everything a child of th user id - eg /:user_id/films, /:user_id/add-film
 
 - add example body to patch in endpoints json
+  -test
